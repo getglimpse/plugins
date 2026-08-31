@@ -1,0 +1,142 @@
+{
+  "id": "numeric-calculator-plugin",
+  "name": "Numeric Calculator",
+  "version": "0.1.0",
+  "apiVersion": "0.1.0",
+  "description": "A plugin version of the built-in numeric calculation page.",
+  "i18n": {
+    "ja": {
+      "name": "数値計算プラグイン",
+      "description": "組み込みの数値計算ページをプラグイン化したものです。",
+      "pages.calculate.title": "数値計算",
+      "pages.calculate.description": "このページで数式を試すか、`: numeric calculator > sqrt(144)` のように検索から実行できます。",
+      "pages.calculate.playground": "プレイグラウンド",
+      "pages.calculate.inputPlaceholder": "数式",
+      "pages.calculate.submitLabel": "計算",
+      "pages.calculate.details": "プラグイン詳細",
+      "pages.calculate.detailLabels.pluginId": "プラグイン ID",
+      "pages.calculate.detailLabels.version": "バージョン",
+      "pages.calculate.detailLabels.page": "ページ",
+      "pages.calculate.errors.required": "数式を入力してください",
+      "pages.calculate.errors.expressionTooLong": "数式は 512 文字以内で入力してください",
+      "pages.calculate.errors.invalidResult": "無効な計算結果です",
+      "pages.calculate.errors.resultTooLong": "結果が大きすぎるため表示できません。上限は 4096 文字です",
+      "pages.calculate.errors.importDisabled": "import は無効です",
+      "pages.calculate.errors.createUnitDisabled": "createUnit は無効です",
+      "pages.calculate.errors.statefulExpressionDisabled": "代入と関数定義は無効です",
+      "pages.calculate.errors.environmentFunctionDisabled": "この関数は無効です",
+      "pages.calculate.help.description": "数値計算用のページアクション型プラグインです。`>` より前のテキストは検索に使われ、`>` より後のテキストが計算機に渡されます。数式は 512 文字まで、結果は 4096 文字までです。代入、関数定義、メタ評価系の操作は無効です。",
+      "pages.calculate.help.examples": [
+        ": numeric calculator > 1 + 1",
+        ": numeric calculator > sqrt(144)",
+        ": calc plugin > pow(2, 8)"
+      ],
+      "pages.calculate.help.commands.> expression.description": "数式を数値計算ページアクションへ渡します。",
+      "pages.calculate.help.commands.sqrt(x).description": "平方根",
+      "pages.calculate.help.commands.pi.description": "円周率",
+      "pages.calculate.staticPage.subtitle": "数値計算プラグインのフォールバックコンテンツです。",
+      "pages.calculate.staticPage.sections.0.title": "プラグイン",
+      "pages.calculate.staticPage.sections.0.rows.0.label": "プラグイン ID",
+      "pages.calculate.staticPage.sections.0.rows.1.label": "貢献",
+      "pages.calculate.staticPage.sections.0.rows.1.value": "内部ページ",
+      "pages.calculate.staticPage.sections.0.rows.2.label": "ページ ID",
+      "pages.calculate.staticPage.sections.0.rows.3.label": "ランタイム",
+      "pages.calculate.staticPage.sections.1.title": "フォールバック",
+      "pages.calculate.staticPage.sections.1.paragraphs.0": "組み込みの NumericPage は mathjs を使いますが、import と createUnit は無効化し、CalculationPage 経由で表示します。",
+      "pages.calculate.staticPage.sections.1.paragraphs.1": "main.js が calculate アクションを登録し、page.js が ctx.registerPage で内部ページのレイアウトを登録します。",
+      "pages.calculate.staticPage.sections.1.paragraphs.2": "styles.css は Glimpse によって読み込まれ、data-glimpse-plugin-page でスコープされます。",
+      "pages.calculate.staticPage.sections.1.paragraphs.3": "インストール後は、内部ページで calculator plugin、numeric calculator、数値計算、電卓を検索できます。",
+      "actions.calculate.title": "式を計算",
+      "actions.calculate.description": "mathjs で数式を評価します。"
+    }
+  },
+  "enabledByDefault": true,
+  "entrypoints": {
+    "main": "./main.js",
+    "page": "./page.js"
+  },
+  "contributes": {
+    "internalPages": [
+      {
+        "id": "plugin:numeric-calculator-plugin",
+        "title": "Numeric Calculator",
+        "tags": ["internal", "plugin", "calculator", "numeric", "tool"],
+        "aliases": [
+          "calculator plugin",
+          "calc plugin",
+          "numeric calculator",
+          "numeric plugin",
+          "math plugin",
+          "数値計算",
+          "電卓"
+        ],
+        "boost": 1,
+        "pageAction": {
+          "actionId": "calculate",
+          "inputPlaceholder": "Expression",
+          "examples": ["1 + 1", "sqrt(144)", "pow(2, 8)", "round(pi, 4)"]
+        },
+        "help": {
+          "description": "A page action plugin for numeric calculations. The text before > is used for search, and the text after > is passed to the calculator. Expressions are limited to 512 characters, results are limited to 4096 characters, and assignment/function-definition/meta-evaluation operations are disabled.",
+          "examples": [
+            ": numeric calculator > 1 + 1",
+            ": numeric calculator > sqrt(144)",
+            ": calc plugin > pow(2, 8)"
+          ],
+          "commands": [
+            {
+              "command": "> expression",
+              "description": "Pass a numeric expression to the calculator page action."
+            },
+            {
+              "command": "sqrt(x)",
+              "description": "Square root"
+            },
+            {
+              "command": "pi",
+              "description": "Pi"
+            }
+          ]
+        },
+        "staticPage": {
+          "subtitle": "Fallback content for the numeric calculator plugin.",
+          "sections": [
+            {
+              "title": "Plugin",
+              "rows": [
+                {
+                  "label": "Plugin ID",
+                  "value": "numeric-calculator-plugin"
+                },
+                {
+                  "label": "Contribution",
+                  "value": "Internal Page"
+                },
+                {
+                  "label": "Page ID",
+                  "value": "plugin:numeric-calculator-plugin"
+                },
+                {
+                  "label": "Runtime",
+                  "value": "frontend"
+                }
+              ]
+            },
+            {
+              "title": "Fallback",
+              "paragraphs": [
+                "The built-in NumericPage uses mathjs with import and createUnit disabled, then renders through CalculationPage.",
+                "main.js registers the calculate action. page.js registers the Internal Page layout with ctx.registerPage.",
+                "styles.css is loaded by Glimpse and scoped with data-glimpse-plugin-page.",
+                "After installing this plugin, search Internal Pages for calculator plugin, numeric calculator, 数値計算, or 電卓."
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "npm": ["mathjs"]
+  }
+}

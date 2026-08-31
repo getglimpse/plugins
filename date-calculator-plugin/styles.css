@@ -1,0 +1,7 @@
+[data-glimpse-plugin-page="date-calculator-plugin"] {
+  --date-calculator-plugin-accent: color-mix(in srgb, var(--accent) 72%, white);
+}
+
+[data-glimpse-plugin-page="date-calculator-plugin"] input:focus {
+  box-shadow: 0 0 0 1px var(--date-calculator-plugin-accent);
+}

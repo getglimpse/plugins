@@ -1,0 +1,7 @@
+[data-glimpse-plugin-page="unit-converter-plugin"] {
+  --unit-converter-plugin-accent: color-mix(in srgb, var(--accent) 72%, white);
+}
+
+[data-glimpse-plugin-page="unit-converter-plugin"] input:focus {
+  box-shadow: 0 0 0 1px var(--unit-converter-plugin-accent);
+}

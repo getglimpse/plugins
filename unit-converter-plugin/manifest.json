@@ -1,0 +1,169 @@
+{
+  "id": "unit-converter-plugin",
+  "name": "Unit Converter",
+  "version": "0.1.0",
+  "apiVersion": "0.1.0",
+  "description": "A plugin version of the built-in unit conversion page.",
+  "i18n": {
+    "ja": {
+      "name": "単位変換プラグイン",
+      "description": "組み込みの単位変換ページをプラグイン化したものです。",
+      "pages.convert.title": "単位変換",
+      "pages.convert.description": "このページで単位変換を試すか、`: unit converter > 10cm to in` のように検索から実行できます。",
+      "pages.convert.playground": "プレイグラウンド",
+      "pages.convert.inputPlaceholder": "変換式",
+      "pages.convert.submitLabel": "変換",
+      "pages.convert.details": "プラグイン詳細",
+      "pages.convert.detailLabels.pluginId": "プラグイン ID",
+      "pages.convert.detailLabels.version": "バージョン",
+      "pages.convert.detailLabels.page": "ページ",
+      "pages.convert.errors.required": "変換式を入力してください",
+      "pages.convert.errors.expressionTooLong": "変換式は 96 文字以内で入力してください",
+      "pages.convert.errors.unsupportedConversion": "対応していない変換式です",
+      "pages.convert.errors.valueOutOfRange": "値が範囲外です。絶対値の上限は 1000000000000000 です",
+      "pages.convert.errors.resultTooLong": "結果が大きすぎるため表示できません。上限は 128 文字です",
+      "pages.convert.errors.invalidTemperature": "絶対零度を下回る温度です",
+      "pages.convert.errors.unsupportedUnit": "対応していない単位です",
+      "pages.convert.errors.incompatibleUnits": "互換性のない単位です",
+      "pages.convert.help.description": "単位変換用のページアクション型プラグインです。`>` より前のテキストは検索に使われ、`>` より後のテキストが変換式として渡されます。長さ、面積、体積、質量、データ量、時間、速度、温度の変換に対応しています。",
+      "pages.convert.help.examples": [
+        ": unit converter > 10cm to inches",
+        ": unit converter > 1kg to lb",
+        ": convert plugin > 32f to c",
+        ": unit converter > 100km/h to mph",
+        ": unit converter > 1gb to mib"
+      ],
+      "pages.convert.help.commands.> expression.description": "変換式を単位変換ページアクションへ渡します。",
+      "pages.convert.help.commands.10cm to inches.description": "センチメートルからインチへ変換します。",
+      "pages.convert.help.commands.1kg to lb.description": "キログラムからポンドへ変換します。",
+      "pages.convert.help.commands.2l to ml.description": "リットルからミリリットルへ変換します。",
+      "pages.convert.help.commands.32f to c.description": "華氏から摂氏へ変換します。",
+      "pages.convert.help.commands.100km/h to mph.description": "キロメートル毎時からマイル毎時へ変換します。",
+      "pages.convert.help.commands.1gb to mib.description": "データ量の単位を変換します。",
+      "pages.convert.staticPage.subtitle": "単位変換プラグインのフォールバックコンテンツです。",
+      "pages.convert.staticPage.sections.0.title": "プラグイン",
+      "pages.convert.staticPage.sections.0.rows.0.label": "プラグイン ID",
+      "pages.convert.staticPage.sections.0.rows.1.label": "貢献",
+      "pages.convert.staticPage.sections.0.rows.1.value": "内部ページ",
+      "pages.convert.staticPage.sections.0.rows.2.label": "ページ ID",
+      "pages.convert.staticPage.sections.0.rows.3.label": "ランタイム",
+      "pages.convert.staticPage.sections.1.title": "フォールバック",
+      "pages.convert.staticPage.sections.1.paragraphs.0": "組み込みの ConvertPage は長さ、面積、体積、質量、データ量、時間、速度、温度の単位に対応しています。",
+      "pages.convert.staticPage.sections.1.paragraphs.1": "main.js が convert アクションを登録し、page.js が ctx.registerPage で内部ページのレイアウトを登録します。",
+      "pages.convert.staticPage.sections.1.paragraphs.2": "styles.css は Glimpse によって読み込まれ、data-glimpse-plugin-page でスコープされます。",
+      "pages.convert.staticPage.sections.1.paragraphs.3": "インストール後は、内部ページで unit converter、unit conversion、単位変換、変換を検索できます。",
+      "actions.convert.title": "単位を変換",
+      "actions.convert.description": "単位変換式を評価します。"
+    }
+  },
+  "enabledByDefault": true,
+  "entrypoints": {
+    "main": "./main.js",
+    "page": "./page.js"
+  },
+  "contributes": {
+    "internalPages": [
+      {
+        "id": "plugin:unit-converter-plugin",
+        "title": "Unit Converter",
+        "tags": ["internal", "plugin", "convert", "unit", "tool"],
+        "aliases": [
+          "unit converter",
+          "unit conversion",
+          "converter plugin",
+          "convert plugin",
+          "単位変換",
+          "変換"
+        ],
+        "boost": 1,
+        "pageAction": {
+          "actionId": "convert",
+          "inputPlaceholder": "Conversion expression",
+          "examples": [
+            "10cm to inches",
+            "5mi to km",
+            "2l to ml",
+            "100km/h to mph",
+            "1gb to mib",
+            "300k to c"
+          ]
+        },
+        "help": {
+          "description": "A page action plugin for unit conversion. The text before > is used for search, and the text after > is passed as the conversion expression. Supports length, area, volume, mass, data, time, speed, and temperature conversions.",
+          "examples": [
+            ": unit converter > 10cm to inches",
+            ": unit converter > 1kg to lb",
+            ": convert plugin > 32f to c",
+            ": unit converter > 100km/h to mph",
+            ": unit converter > 1gb to mib"
+          ],
+          "commands": [
+            {
+              "command": "> expression",
+              "description": "Pass a conversion expression to the unit converter page action."
+            },
+            {
+              "command": "10cm to inches",
+              "description": "Convert centimeters to inches"
+            },
+            {
+              "command": "1kg to lb",
+              "description": "Convert kilograms to pounds"
+            },
+            {
+              "command": "2l to ml",
+              "description": "Convert liters to milliliters"
+            },
+            {
+              "command": "32f to c",
+              "description": "Convert Fahrenheit to Celsius"
+            },
+            {
+              "command": "100km/h to mph",
+              "description": "Convert kilometers per hour to miles per hour"
+            },
+            {
+              "command": "1gb to mib",
+              "description": "Convert data units"
+            }
+          ]
+        },
+        "staticPage": {
+          "subtitle": "Fallback content for the unit converter plugin.",
+          "sections": [
+            {
+              "title": "Plugin",
+              "rows": [
+                {
+                  "label": "Plugin ID",
+                  "value": "unit-converter-plugin"
+                },
+                {
+                  "label": "Contribution",
+                  "value": "Internal Page"
+                },
+                {
+                  "label": "Page ID",
+                  "value": "plugin:unit-converter-plugin"
+                },
+                {
+                  "label": "Runtime",
+                  "value": "frontend"
+                }
+              ]
+            },
+            {
+              "title": "Fallback",
+              "paragraphs": [
+                "The built-in ConvertPage supports length, area, volume, mass, data, time, speed, and temperature units.",
+                "main.js registers the convert action. page.js registers the Internal Page layout with ctx.registerPage.",
+                "styles.css is loaded by Glimpse and scoped with data-glimpse-plugin-page.",
+                "After installing this plugin, search Internal Pages for unit converter, unit conversion, 単位変換, or 変換."
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

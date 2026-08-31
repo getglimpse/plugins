@@ -1,0 +1,45 @@
+.html-viewer-plugin-frame {
+  display: flex;
+  height: 100%;
+  min-height: 30rem;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.html-viewer-plugin-iframe {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  background: #ffffff;
+  color-scheme: light;
+}
+
+.html-viewer-plugin-message {
+  display: flex;
+  min-height: 24rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.html-viewer-plugin-message-stack {
+  display: flex;
+  max-width: 36rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.html-viewer-plugin-message-stack p {
+  margin: 0;
+}
+
+.html-viewer-plugin-message-title {
+  color: var(--text-main);
+  font-weight: 600;
+}

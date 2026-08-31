@@ -1,0 +1,7 @@
+[data-glimpse-plugin-page="numeric-calculator-plugin"] {
+  --numeric-calculator-plugin-accent: color-mix(in srgb, var(--accent) 70%, white);
+}
+
+[data-glimpse-plugin-page="numeric-calculator-plugin"] input:focus {
+  box-shadow: 0 0 0 1px var(--numeric-calculator-plugin-accent);
+}

@@ -1,0 +1,151 @@
+{
+  "id": "office-documents-viewer-plugin",
+  "name": "Office Documents Viewer",
+  "version": "0.1.0",
+  "apiVersion": "0.1.0",
+  "description": "Preview Office Open XML documents, spreadsheets, and presentations.",
+  "i18n": {
+    "ja": {
+      "name": "Office 文書ビューアプラグイン",
+      "description": "Office Open XML の文書、スプレッドシート、プレゼンテーションをプレビューします。",
+      "viewers.office.title": "Office 文書ビューア",
+      "viewers.office.description": "Office 文書、スプレッドシート、プレゼンテーションをプレビューします。",
+      "viewers.office.errors.sourceUnavailable": "Office ファイルの元ファイルパスを取得できません。",
+      "viewers.office.legacy.title": "従来形式のバイナリ Office ファイルです。",
+      "viewers.office.legacy.description": "このビューアは .docx、.xlsx、.pptx などの Office Open XML ファイルに対応しています。",
+      "viewers.office.errors.unsupportedExtension": "対応していない Office 拡張子です: .{extension}",
+      "viewers.office.errors.previewFailed": "Office 文書をプレビューできませんでした。",
+      "viewers.office.errors.wordDocumentNotFound": "word/document.xml が見つかりません。",
+      "viewers.office.errors.worksheetNotFound": "ワークシート XML が見つかりません。",
+      "viewers.office.errors.slideNotFound": "スライド XML が見つかりません。",
+      "viewers.office.emptyText": "プレビューできるテキストがありません。",
+      "viewers.office.word.previewTitle": "Word 文書プレビュー: {fileName}",
+      "viewers.office.word.section": "文書",
+      "viewers.office.spreadsheet.previewTitle": "スプレッドシートプレビュー: {fileName} ({sheetName})",
+      "viewers.office.spreadsheet.stats": "{rows} 行 / {columns} 列{truncated}",
+      "viewers.office.spreadsheet.section": "シート",
+      "viewers.office.spreadsheet.emptyCells": "セルがありません",
+      "viewers.office.presentation.previewTitle": "プレゼンテーションプレビュー: {fileName}",
+      "viewers.office.presentation.section": "スライド",
+      "viewers.office.presentation.slideHeading": "スライド {number}",
+      "viewers.office.errors.packageTooLarge": "Office パッケージが大きすぎるためプレビューできません: {size} が上限 {limit} を超えています。",
+      "viewers.office.errors.tooManyEntries": "Office パッケージの ZIP エントリ数が多すぎます: {count} が上限 {limit} を超えています。",
+      "viewers.office.errors.invalidCentralDirectory": "ZIP の中央ディレクトリが不正です。",
+      "viewers.office.errors.encryptedUnsupported": "暗号化された Office ファイルには対応していません。",
+      "viewers.office.errors.compressedEntryTooLarge": "ZIP エントリが大きすぎるためプレビューできません: {name} の圧縮サイズ {size} が上限 {limit} を超えています。",
+      "viewers.office.errors.uncompressedEntryTooLarge": "ZIP エントリが大きすぎるためプレビューできません: {name} の展開後サイズ {size} が上限 {limit} を超えています。",
+      "viewers.office.errors.totalExpandedTooLarge": "Office プレビューで展開したデータ量が大きすぎます: {size} が上限 {limit} を超えています。",
+      "viewers.office.errors.xmlPartTooLarge": "XML パートが大きすぎるためプレビューできません: {name} は {size} です。",
+      "viewers.office.errors.xmlTextTooLarge": "XML パートのテキストが多すぎるためプレビューできません: {name} が {limit} 文字を超えています。",
+      "viewers.office.errors.invalidLocalHeader": "ZIP のローカルヘッダーが不正です。",
+      "viewers.office.errors.entryDataOutOfBounds": "ZIP エントリのデータがパッケージ範囲外です。",
+      "viewers.office.errors.unsupportedCompressionMethod": "対応していない ZIP 圧縮方式です: {method}",
+      "viewers.office.errors.decompressionUnavailable": "この WebView では DecompressionStream を利用できません。",
+      "viewers.office.errors.payloadTooLarge": "Office パッケージのペイロードが大きすぎるためプレビューできません: base64 長 {length} が上限 {limit} を超えています。",
+      "viewers.office.errors.entryExpandedTooLarge": "ZIP エントリの展開後サイズが大きすぎます: {size} が上限 {limit} を超えています。",
+      "pages.main.title": "Office 文書ビューア",
+      "pages.main.help.description": "インデックス作成時には本文を読まず、Office 文書をプレビューするビューアプラグインです。",
+      "pages.main.help.examples": [
+        ": office viewer plugin",
+        ": docx viewer plugin"
+      ],
+      "pages.main.help.commands.Open an Office file.description": "このプラグインが有効かつ信頼済みの場合、Office ファイルはプラグインビューアでプレビューされます。",
+      "pages.main.staticPage.subtitle": "プラグイン側の解析で Office Open XML ファイルをプレビューします。",
+      "pages.main.staticPage.sections.0.title": "プラグイン",
+      "pages.main.staticPage.sections.0.rows.0.label": "プラグイン ID",
+      "pages.main.staticPage.sections.0.rows.1.label": "バージョン",
+      "pages.main.staticPage.sections.0.rows.2.label": "ビューア",
+      "pages.main.staticPage.sections.0.rows.3.label": "拡張子"
+    }
+  },
+  "enabledByDefault": true,
+  "entrypoints": {
+    "main": "./main.js",
+    "page": "./page.js"
+  },
+  "capabilities": {
+    "files": {
+      "read": "active-tab"
+    }
+  },
+  "contributes": {
+    "internalPages": [
+      {
+        "id": "plugin:office-documents-viewer-plugin",
+        "title": "Office Documents Viewer",
+        "tags": ["internal", "plugin", "viewer", "office", "document"],
+        "aliases": [
+          "office viewer",
+          "docx viewer",
+          "xlsx viewer",
+          "pptx viewer",
+          "office plugin"
+        ],
+        "boost": 1,
+        "help": {
+          "description": "A viewer plugin that previews Office documents without reading them during indexing.",
+          "examples": [": office viewer plugin", ": docx viewer plugin"],
+          "commands": [
+            {
+              "command": "Open an Office file",
+              "description": "When this plugin is enabled and trusted, Office files are previewed by the plugin viewer."
+            }
+          ]
+        },
+        "staticPage": {
+          "subtitle": "Preview Office Open XML files with plugin-owned parsing.",
+          "sections": [
+            {
+              "title": "Plugin",
+              "rows": [
+                {
+                  "label": "Plugin ID",
+                  "value": "office-documents-viewer-plugin"
+                },
+                {
+                  "label": "Version",
+                  "value": "0.1.0"
+                },
+                {
+                  "label": "Viewer",
+                  "value": "office"
+                },
+                {
+                  "label": "Extensions",
+                  "value": ".docx, .docm, .xlsx, .xlsm, .pptx, .pptm"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "viewers": [
+      {
+        "id": "office",
+        "title": "Office Documents Viewer",
+        "description": "Preview Office documents, spreadsheets, and presentations.",
+        "extensions": [
+          "doc",
+          "docx",
+          "docm",
+          "dotx",
+          "dotm",
+          "xls",
+          "xlsx",
+          "xlsm",
+          "xltx",
+          "xltm",
+          "ppt",
+          "pptx",
+          "pptm",
+          "potx",
+          "potm",
+          "pps",
+          "ppsx",
+          "ppsm"
+        ]
+      }
+    ]
+  }
+}

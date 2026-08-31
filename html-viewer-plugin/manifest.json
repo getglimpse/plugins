@@ -1,0 +1,72 @@
+{
+  "id": "html-viewer-plugin",
+  "name": "HTML Viewer",
+  "version": "0.1.0",
+  "apiVersion": "0.1.0",
+  "description": "Preview .html and .htm files by delegating rendering to the app WebView.",
+  "enabledByDefault": true,
+  "entrypoints": {
+    "main": "./main.js",
+    "page": "./page.js"
+  },
+  "capabilities": {
+    "files": {
+      "read": "active-tab"
+    }
+  },
+  "contributes": {
+    "internalPages": [
+      {
+        "id": "plugin:html-viewer-plugin",
+        "title": "HTML Viewer",
+        "tags": ["internal", "plugin", "viewer", "html"],
+        "aliases": ["html viewer", "html plugin", "web page viewer plugin"],
+        "boost": 1,
+        "help": {
+          "description": "A viewer plugin that previews .html and .htm files through the app WebView.",
+          "examples": [": html viewer plugin", ": html plugin"],
+          "commands": [
+            {
+              "command": "Open an .html or .htm file",
+              "description": "When this plugin is enabled and trusted, HTML files are previewed by the plugin viewer after a manual load click."
+            }
+          ]
+        },
+        "staticPage": {
+          "subtitle": "Preview local HTML files through a manually loaded WebView frame.",
+          "sections": [
+            {
+              "title": "Plugin",
+              "rows": [
+                {
+                  "label": "Plugin ID",
+                  "value": "html-viewer-plugin"
+                },
+                {
+                  "label": "Version",
+                  "value": "0.1.0"
+                },
+                {
+                  "label": "Viewer",
+                  "value": "html"
+                },
+                {
+                  "label": "Extensions",
+                  "value": ".html, .htm"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "viewers": [
+      {
+        "id": "html",
+        "title": "HTML Viewer",
+        "description": "Preview HTML files through the app WebView.",
+        "extensions": ["html", "htm"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "id": "date-calculator-plugin",
+  "name": "Date Calculator",
+  "version": "0.1.0",
+  "apiVersion": "0.1.0",
+  "description": "A plugin version of the built-in date calculation page.",
+  "i18n": {
+    "ja": {
+      "name": "日付計算プラグイン",
+      "description": "組み込みの日付計算ページをプラグイン化したものです。",
+      "pages.calculate.title": "日付計算",
+      "pages.calculate.description": "このページで日付式を試すか、`: date calculator > today + 30d` のように検索から実行できます。",
+      "pages.calculate.playground": "プレイグラウンド",
+      "pages.calculate.inputPlaceholder": "日付式",
+      "pages.calculate.submitLabel": "計算",
+      "pages.calculate.details": "プラグイン詳細",
+      "pages.calculate.detailLabels.pluginId": "プラグイン ID",
+      "pages.calculate.detailLabels.version": "バージョン",
+      "pages.calculate.detailLabels.page": "ページ",
+      "pages.calculate.errors.required": "日付式を入力してください",
+      "pages.calculate.errors.expressionTooLong": "日付式は 96 文字以内で入力してください",
+      "pages.calculate.errors.amountOutOfRange": "指定した数値が大きすぎます",
+      "pages.calculate.errors.unsupportedExpression": "対応していない日付式です",
+      "pages.calculate.help.description": "日付計算用のページアクション型プラグインです。`>` より前のテキストは検索に使われ、`>` より後のテキストが日付式として渡されます。today、YYYY-MM-DD、d/w/m/y/bd の加減算、月初/月末、曜日、next/last weekday、日付差分に対応しています。",
+      "pages.calculate.help.examples": [
+        ": date calculator > today",
+        ": date calculator > today + 7d",
+        ": calendar plugin > today + 10bd",
+        ": date calculator > next monday",
+        ": date calculator > weekday(today)",
+        ": date calculator > eom(today)",
+        ": date calculator > 2026-01-31 + 1m",
+        ": date calculator > 2026-08-10 - 2026-07-30"
+      ],
+      "pages.calculate.help.commands.> expression.description": "日付式を日付計算ページアクションへ渡します。",
+      "pages.calculate.help.commands.today.description": "今日の日付",
+      "pages.calculate.help.commands.today + 7d.description": "今日から 7 日後",
+      "pages.calculate.help.commands.today - 2w.description": "今日から 2 週間前",
+      "pages.calculate.help.commands.today + 10bd.description": "土日を飛ばして今日から 10 平日後",
+      "pages.calculate.help.commands.2026-01-31 + 1m.description": "月末を丸めながら 1 か月加算します。",
+      "pages.calculate.help.commands.startOfMonth(today).description": "月初日",
+      "pages.calculate.help.commands.endOfMonth(today).description": "月末日",
+      "pages.calculate.help.commands.weekday(today).description": "曜日名",
+      "pages.calculate.help.commands.next monday.description": "今日より後の次の月曜日",
+      "pages.calculate.help.commands.last friday.description": "今日より前の直近の金曜日",
+      "pages.calculate.help.commands.today - 30d.description": "今日から 30 日前",
+      "pages.calculate.help.commands.2026-08-10 - 2026-07-30.description": "2 つの日付の差分を日数で返します。",
+      "pages.calculate.staticPage.subtitle": "日付計算プラグインのフォールバックコンテンツです。",
+      "pages.calculate.staticPage.sections.0.title": "プラグイン",
+      "pages.calculate.staticPage.sections.0.rows.0.label": "プラグイン ID",
+      "pages.calculate.staticPage.sections.0.rows.1.label": "貢献",
+      "pages.calculate.staticPage.sections.0.rows.1.value": "内部ページ",
+      "pages.calculate.staticPage.sections.0.rows.2.label": "ページ ID",
+      "pages.calculate.staticPage.sections.0.rows.3.label": "ランタイム",
+      "pages.calculate.staticPage.sections.1.title": "フォールバック",
+      "pages.calculate.staticPage.sections.1.paragraphs.0": "組み込みの DatePage は today、YYYY-MM-DD、d/w/m/y/bd の加減算、月初/月末、曜日、next/last weekday、日付差分に対応しています。",
+      "pages.calculate.staticPage.sections.1.paragraphs.1": "main.js が calculate アクションを登録し、page.js が ctx.registerPage で内部ページのレイアウトを登録します。",
+      "pages.calculate.staticPage.sections.1.paragraphs.2": "styles.css は Glimpse によって読み込まれ、data-glimpse-plugin-page でスコープされます。",
+      "pages.calculate.staticPage.sections.1.paragraphs.3": "インストール後は、内部ページで date calculator、calendar plugin、日付計算、日付を検索できます。",
+      "actions.calculate.title": "日付式を計算",
+      "actions.calculate.description": "today を基準に日付式を評価します。"
+    }
+  },
+  "enabledByDefault": true,
+  "entrypoints": {
+    "main": "./main.js",
+    "page": "./page.js"
+  },
+  "contributes": {
+    "internalPages": [
+      {
+        "id": "plugin:date-calculator-plugin",
+        "title": "Date Calculator",
+        "tags": ["internal", "plugin", "date", "calendar", "tool"],
+        "aliases": [
+          "date plugin",
+          "date calculator",
+          "calendar plugin",
+          "date calculation",
+          "日付計算",
+          "日付"
+        ],
+        "boost": 1,
+        "pageAction": {
+          "actionId": "calculate",
+          "inputPlaceholder": "Date expression",
+          "examples": [
+            "today",
+            "today + 7d",
+            "today + 10bd",
+            "next monday",
+            "weekday(today)",
+            "eom(today)",
+            "2026-01-31 + 1m",
+            "2026-08-10 - 2026-07-30"
+          ]
+        },
+        "help": {
+          "description": "A page action plugin for date calculations. The text before > is used for search, and the text after > is passed as the date expression. Supports today, YYYY-MM-DD, d/w/m/y/bd offsets, month helpers, weekdays, next/last weekday, and date differences.",
+          "examples": [
+            ": date calculator > today",
+            ": date calculator > today + 7d",
+            ": calendar plugin > today + 10bd",
+            ": date calculator > next monday",
+            ": date calculator > weekday(today)",
+            ": date calculator > eom(today)",
+            ": date calculator > 2026-01-31 + 1m",
+            ": date calculator > 2026-08-10 - 2026-07-30"
+          ],
+          "commands": [
+            {
+              "command": "> expression",
+              "description": "Pass a date expression to the date calculator page action."
+            },
+            {
+              "command": "today",
+              "description": "Today's date"
+            },
+            {
+              "command": "today + 7d",
+              "description": "Seven days from today"
+            },
+            {
+              "command": "today - 2w",
+              "description": "Two weeks before today"
+            },
+            {
+              "command": "today + 10bd",
+              "description": "Ten weekdays after today, skipping Saturday and Sunday"
+            },
+            {
+              "command": "2026-01-31 + 1m",
+              "description": "Add one calendar month with end-of-month clamping"
+            },
+            {
+              "command": "startOfMonth(today)",
+              "description": "First day of the month"
+            },
+            {
+              "command": "endOfMonth(today)",
+              "description": "Last day of the month"
+            },
+            {
+              "command": "weekday(today)",
+              "description": "Weekday name"
+            },
+            {
+              "command": "next monday",
+              "description": "Next Monday after today"
+            },
+            {
+              "command": "last friday",
+              "description": "Previous Friday before today"
+            },
+            {
+              "command": "today - 30d",
+              "description": "Thirty days before today"
+            },
+            {
+              "command": "2026-08-10 - 2026-07-30",
+              "description": "Difference between two dates in days"
+            }
+          ]
+        },
+        "staticPage": {
+          "subtitle": "Fallback content for the date calculator plugin.",
+          "sections": [
+            {
+              "title": "Plugin",
+              "rows": [
+                {
+                  "label": "Plugin ID",
+                  "value": "date-calculator-plugin"
+                },
+                {
+                  "label": "Contribution",
+                  "value": "Internal Page"
+                },
+                {
+                  "label": "Page ID",
+                  "value": "plugin:date-calculator-plugin"
+                },
+                {
+                  "label": "Runtime",
+                  "value": "frontend"
+                }
+              ]
+            },
+            {
+              "title": "Fallback",
+              "paragraphs": [
+                "The built-in DatePage supports today, YYYY-MM-DD, d/w/m/y/bd offsets, month helpers, weekdays, next/last weekday, and date differences.",
+                "main.js registers the calculate action. page.js registers the Internal Page layout with ctx.registerPage.",
+                "styles.css is loaded by Glimpse and scoped with data-glimpse-plugin-page.",
+                "After installing this plugin, search Internal Pages for date calculator, calendar plugin, 日付計算, or 日付."
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
