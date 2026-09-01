@@ -7,7 +7,7 @@ It demonstrates:
 - page action execution through `contributes.internalPages[].pageAction`
 - date calculation logic in `main.js`
 - an Internal Page layout in `page.js`
-- `ActionPlayground`, `Details`, and `KeyValueList`
+- `Tabs`, `ActionPlayground`, `ActionSettings`, `Section`, and `KeyValueList`
 - manifest `i18n` for Japanese labels and help text
 - scoped plugin styling through `styles.css`
 

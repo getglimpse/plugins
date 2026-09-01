@@ -10,7 +10,7 @@ It demonstrates:
 - `page.js` Internal Page layout
 - `ctx.registerPage()` from `page.js`
 - Core component rendering with `ctx.h` and `ctx.components`
-- A page action with a playground, settings, and plugin details
+- A page action with Playground and Info tabs
 
 Install from Plugin Page with this directory path, then trust and enable it.
 Search for `first glimpse > Ada`, then press Enter while the preview is active.

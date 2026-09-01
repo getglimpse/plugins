@@ -7,7 +7,7 @@ It demonstrates:
 - page action execution through `contributes.internalPages[].pageAction`
 - calculation logic in `main.js`
 - an Internal Page layout in `page.js`
-- `ActionPlayground`, `Details`, and `KeyValueList`
+- `Tabs`, `ActionPlayground`, `ActionSettings`, `Section`, and `KeyValueList`
 - scoped plugin styling through `styles.css`
 
 Safety limits:
