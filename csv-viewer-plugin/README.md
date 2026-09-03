@@ -12,7 +12,7 @@ Preview behavior:
 
 - `contributes.viewers`: `csv`
 - Extensions: `.csv`
-- Runtime entrypoints: `main.js`, `page.js`
+- Runtime entrypoint: `main.js`; page layout: `page.json`
 
 Glimpse routes `.csv` files to this viewer by matching `sourcePath` against
 `contributes.viewers[].extensions`:
@@ -28,7 +28,7 @@ Glimpse routes `.csv` files to this viewer by matching `sourcePath` against
 `main.js` registers the viewer, checks size with `ctx.files.getMetadata`, reads
 small enough source files with `ctx.files.readText`, parses CSV in the plugin,
 and renders rows with the Core `components.Table` component.
-`page.js` registers the plugin overview Internal Page.
+`page.json` declares no custom tabs; Glimpse generates the plugin Info page from `manifest.json`.
 
 ## Install
 

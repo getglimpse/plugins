@@ -7,8 +7,8 @@ It demonstrates:
 - `manifest.json` discovery metadata
 - `main.js` lifecycle
 - `ctx.registerAction()`
-- `page.js` Internal Page layout
-- `ctx.registerPage()` from `page.js`
+- `page.json` Playground tab layout
+- standard tabs declared in `page.json`
 - Core component rendering with `ctx.h` and `ctx.components`
 - A page action with Playground and Info tabs
 

@@ -14,7 +14,7 @@ PDF viewer sample plugin for Glimpse.
 
 - `contributes.viewers`: `pdf`
 - Extensions: `.pdf`
-- Runtime entrypoints: `main.js`, `page.js`
+- Runtime entrypoint: `main.js`; page layout: `page.json`
 
 Glimpse routes `.pdf` files to this viewer by matching `sourcePath` against
 `contributes.viewers[].extensions`:
@@ -31,7 +31,7 @@ Glimpse routes `.pdf` files to this viewer by matching `sourcePath` against
 `ctx.files.getMetadata`, converts the source path with `ctx.files.toAssetUrl`,
 and chooses whether to render an iframe immediately, defer loading, or offer an
 external open action.
-`page.js` registers the plugin overview Internal Page.
+`page.json` declares no custom tabs; Glimpse generates the plugin Info page from `manifest.json`.
 
 ## Install
 

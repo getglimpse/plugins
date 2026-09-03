@@ -27,7 +27,7 @@ from that directory.
 
 - `contributes.viewers`: `html`
 - Extensions: `.html`, `.htm`
-- Runtime entrypoints: `main.js`, `page.js`
+- Runtime entrypoint: `main.js`; page layout: `page.json`
 
 Glimpse routes `.html` and `.htm` files to this viewer by matching `sourcePath`
 against `contributes.viewers[].extensions`:

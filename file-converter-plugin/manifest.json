@@ -1,0 +1,80 @@
+{
+  "id": "file-converter-plugin",
+  "name": "File Converter",
+  "version": "0.2.0",
+  "apiVersion": "0.2.0",
+  "releaseDate": "2026-09-03",
+  "description": "Drop a text or Markdown file, add a success marker to the top, and write the converted file to a configurable output directory.",
+  "enabledByDefault": true,
+  "page": "./page.json",
+  "entrypoints": {
+    "main": "./main.js"
+  },
+  "contributes": {
+    "internalPage": {
+      "id": "plugin:file-converter-plugin",
+      "titleKey": "plugin.name",
+      "titleFallback": "File Converter",
+      "tags": [
+        "internal",
+        "plugin",
+        "converter",
+        "file",
+        "tool"
+      ],
+      "aliases": [
+        "file converter",
+        "converter plugin",
+        "file conversion",
+        "ファイル変換",
+        "変換"
+      ],
+      "boost": 1
+    },
+    "actions": [
+      {
+        "id": "convertFile",
+        "titleKey": "actions.convertFile.title",
+        "titleFallback": "Convert File",
+        "descriptionKey": "actions.convertFile.description",
+        "descriptionFallback": "Convert selected text or Markdown files.",
+        "input": {
+          "type": "file",
+          "accept": [
+            "text/plain",
+            "text/markdown",
+            ".txt",
+            ".md",
+            ".markdown"
+          ],
+          "multiple": true,
+          "maxBytes": 10485760,
+          "maxFiles": 20
+        },
+        "output": {
+          "type": "file",
+          "directorySetting": "outputDirectory"
+        }
+      }
+    ],
+    "viewers": []
+  },
+  "i18n": "./i18n.json",
+  "capabilities": {
+    "files": {
+      "read": "none",
+      "write": "declared-output-directory"
+    }
+  },
+  "settings": {
+    "outputDirectory": {
+      "type": "directory",
+      "labelKey": "settings.outputDirectory.label",
+      "labelFallback": "Output directory",
+      "descriptionKey": "settings.outputDirectory.description",
+      "descriptionFallback": "Directory where converted files are written.",
+      "default": "downloads",
+      "required": true
+    }
+  }
+}

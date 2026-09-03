@@ -1,0 +1,40 @@
+{
+  "ja": {
+    "name": "PDF ビューア",
+    "description": "大きな文書の遅延読み込みに対応した .pdf ファイルプレビューです。",
+    "viewers.pdf.title": "PDF ビューア",
+    "viewers.pdf.description": "PDF ファイルをプレビューします。",
+    "viewers.pdf.errors.sourceUnavailable": "PDF の元ファイルパスを取得できません。",
+    "viewers.pdf.tooLarge.title": "PDF が大きすぎるためアプリ内でプレビューできません。",
+    "viewers.pdf.tooLarge.description": "このファイルは {size} です。アプリ内プレビューの上限は {limit} です。",
+    "viewers.pdf.openExternally": "外部アプリで開く",
+    "viewers.pdf.large.label": "大きな PDF",
+    "viewers.pdf.large.description": "このファイルは {size} です。プレビューの読み込みにメモリを多く使う可能性があります。",
+    "viewers.pdf.large.button": "プレビューを読み込む",
+    "viewers.pdf.unknownSize": "サイズ不明",
+    "pages.main.title": "PDF ビューア",
+    "pages.main.description": "プラグイン側の iframe ビューアで .pdf ファイルをプレビューします。ファイルサイズを確認し、大きな PDF は遅延読み込みにします。",
+    "pages.main.overview": "概要",
+    "pages.main.overviewContent": "- `.pdf` ファイルのプレビューに対応します。\n- PDF 表示は Core のパーサーやコンポーネントではなくプラグイン側で行います。\n- WebView 組み込みの PDF 表示を iframe 経由で使います。",
+    "pages.main.details": "プラグイン詳細",
+    "pages.main.detailLabels.pluginId": "プラグイン ID",
+    "pages.main.detailLabels.version": "バージョン",
+    "pages.main.detailLabels.page": "ページ",
+    "pages.main.detailLabels.viewer": "ビューア",
+    "pages.main.detailLabels.extensions": "拡張子",
+    "pages.main.help.description": ".pdf ファイルをプレビューするビューアプラグインです。",
+    "pages.main.help.examples": [
+      ": pdf viewer plugin",
+      ": pdf plugin"
+    ],
+    "pages.main.help.commands.Open a .pdf file.description": "このプラグインが有効かつ信頼済みの場合、.pdf ファイルはプラグインビューアでプレビューされます。",
+    "pages.main.staticPage.subtitle": "大きな文書の遅延読み込みに対応して .pdf ファイルをプレビューします。",
+    "pages.main.staticPage.sections.0.title": "プラグイン",
+    "pages.main.staticPage.sections.0.rows.0.label": "プラグイン ID",
+    "pages.main.staticPage.sections.0.rows.1.label": "バージョン",
+    "pages.main.staticPage.sections.0.rows.2.label": "ビューア",
+    "pages.main.staticPage.sections.0.rows.3.label": "拡張子",
+    "plugin.name": "PDF ビューア",
+    "plugin.description": "大きな文書の遅延読み込みに対応した .pdf ファイルプレビューです。"
+  }
+}

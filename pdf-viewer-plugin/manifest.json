@@ -1,107 +1,52 @@
 {
   "id": "pdf-viewer-plugin",
   "name": "PDF Viewer",
-  "version": "0.1.0",
-  "apiVersion": "0.1.0",
+  "version": "0.2.0",
+  "apiVersion": "0.2.0",
+  "releaseDate": "2026-09-03",
   "description": "Preview .pdf files with lazy loading for large documents.",
-  "i18n": {
-    "ja": {
-      "name": "PDF ビューアプラグイン",
-      "description": "大きな文書の遅延読み込みに対応した .pdf ファイルプレビューです。",
-      "viewers.pdf.title": "PDF ビューア",
-      "viewers.pdf.description": "PDF ファイルをプレビューします。",
-      "viewers.pdf.errors.sourceUnavailable": "PDF の元ファイルパスを取得できません。",
-      "viewers.pdf.tooLarge.title": "PDF が大きすぎるためアプリ内でプレビューできません。",
-      "viewers.pdf.tooLarge.description": "このファイルは {size} です。アプリ内プレビューの上限は {limit} です。",
-      "viewers.pdf.openExternally": "外部アプリで開く",
-      "viewers.pdf.large.label": "大きな PDF",
-      "viewers.pdf.large.description": "このファイルは {size} です。プレビューの読み込みにメモリを多く使う可能性があります。",
-      "viewers.pdf.large.button": "プレビューを読み込む",
-      "viewers.pdf.unknownSize": "サイズ不明",
-      "pages.main.title": "PDF ビューア",
-      "pages.main.description": "プラグイン側の iframe ビューアで .pdf ファイルをプレビューします。ファイルサイズを確認し、大きな PDF は遅延読み込みにします。",
-      "pages.main.overview": "概要",
-      "pages.main.overviewContent": "- `.pdf` ファイルのプレビューに対応します。\n- PDF 表示は Core のパーサーやコンポーネントではなくプラグイン側で行います。\n- WebView 組み込みの PDF 表示を iframe 経由で使います。",
-      "pages.main.details": "プラグイン詳細",
-      "pages.main.detailLabels.pluginId": "プラグイン ID",
-      "pages.main.detailLabels.version": "バージョン",
-      "pages.main.detailLabels.page": "ページ",
-      "pages.main.detailLabels.viewer": "ビューア",
-      "pages.main.detailLabels.extensions": "拡張子",
-      "pages.main.help.description": ".pdf ファイルをプレビューするビューアプラグインです。",
-      "pages.main.help.examples": [": pdf viewer plugin", ": pdf plugin"],
-      "pages.main.help.commands.Open a .pdf file.description": "このプラグインが有効かつ信頼済みの場合、.pdf ファイルはプラグインビューアでプレビューされます。",
-      "pages.main.staticPage.subtitle": "大きな文書の遅延読み込みに対応して .pdf ファイルをプレビューします。",
-      "pages.main.staticPage.sections.0.title": "プラグイン",
-      "pages.main.staticPage.sections.0.rows.0.label": "プラグイン ID",
-      "pages.main.staticPage.sections.0.rows.1.label": "バージョン",
-      "pages.main.staticPage.sections.0.rows.2.label": "ビューア",
-      "pages.main.staticPage.sections.0.rows.3.label": "拡張子"
-    }
-  },
   "enabledByDefault": true,
+  "page": "./page.json",
   "entrypoints": {
-    "main": "./main.js",
-    "page": "./page.js"
-  },
-  "capabilities": {
-    "files": {
-      "read": "active-tab"
-    }
+    "main": "./main.js"
   },
   "contributes": {
-    "internalPages": [
-      {
-        "id": "plugin:pdf-viewer-plugin",
-        "title": "PDF Viewer",
-        "tags": ["internal", "plugin", "viewer", "pdf"],
-        "aliases": ["pdf viewer", "pdf plugin", "file viewer plugin"],
-        "boost": 1,
-        "help": {
-          "description": "A viewer plugin that previews .pdf files.",
-          "examples": [": pdf viewer plugin", ": pdf plugin"],
-          "commands": [
-            {
-              "command": "Open a .pdf file",
-              "description": "When this plugin is enabled and trusted, .pdf files are previewed by the plugin viewer."
-            }
-          ]
-        },
-        "staticPage": {
-          "subtitle": "Preview .pdf files with lazy loading for large documents.",
-          "sections": [
-            {
-              "title": "Plugin",
-              "rows": [
-                {
-                  "label": "Plugin ID",
-                  "value": "pdf-viewer-plugin"
-                },
-                {
-                  "label": "Version",
-                  "value": "0.1.0"
-                },
-                {
-                  "label": "Viewer",
-                  "value": "pdf"
-                },
-                {
-                  "label": "Extensions",
-                  "value": ".pdf"
-                }
-              ]
-            }
-          ]
-        }
-      }
-    ],
+    "internalPage": {
+      "id": "plugin:pdf-viewer-plugin",
+      "titleKey": "plugin.name",
+      "titleFallback": "PDF Viewer",
+      "tags": [
+        "internal",
+        "plugin",
+        "viewer",
+        "pdf"
+      ],
+      "aliases": [
+        "pdf viewer",
+        "pdf plugin",
+        "file viewer plugin"
+      ],
+      "boost": 1
+    },
+    "actions": [],
     "viewers": [
       {
         "id": "pdf",
-        "title": "PDF Viewer",
-        "description": "Preview PDF files.",
-        "extensions": ["pdf"]
+        "titleKey": "viewers.pdf.title",
+        "titleFallback": "PDF Viewer",
+        "descriptionKey": "viewers.pdf.description",
+        "descriptionFallback": "Preview PDF files.",
+        "extensions": [
+          "pdf"
+        ]
       }
     ]
+  },
+  "i18n": "./i18n.json",
+  "capabilities": {
+    "files": {
+      "read": "active-tab",
+      "write": "none"
+    }
   }
 }

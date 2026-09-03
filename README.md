@@ -13,7 +13,7 @@ Install a sample from **Plugin Page**:
 
 Samples:
 
-- `first-glimpse-plugin`: minimal `main.js` action and `page.js` Internal Page.
+- `first-glimpse-plugin`: minimal `main.js` action and `page.json` Playground tab.
 - `numeric-calculator-plugin`: calculator page built with Core components and mathjs.
 - `date-calculator-plugin`: date calculator page built with Core components.
 - `unit-converter-plugin`: unit converter page built with Core components.
@@ -21,6 +21,10 @@ Samples:
 - `csv-viewer-plugin`: CSV file viewer with plugin-owned parsing and Core `Table`.
 - `html-viewer-plugin`: HTML file viewer with manual WebView loading.
 - `office-documents-viewer-plugin`: Office Open XML viewer for Word, Excel, and PowerPoint files.
+- `file-converter-plugin`: `.txt`, `.md`, and `.markdown` file drop converter that prepends a success marker and writes to a configurable output directory.
+
+Samples may define optional localized strings in `i18n.json`. When present,
+`manifest.json` references that file through `i18n`.
 
 Each sample keeps its own update history in `CHANGELOG.md`.
 

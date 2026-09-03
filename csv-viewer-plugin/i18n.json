@@ -1,0 +1,41 @@
+{
+  "ja": {
+    "name": "CSV ビューア",
+    "description": "プラグイン側の CSV パーサーと Core のテーブルコンポーネントで .csv ファイルをプレビューします。",
+    "viewers.csv.title": "CSV ビューア",
+    "viewers.csv.description": "CSV ファイルをテーブルとしてプレビューします。",
+    "viewers.csv.preview": "プレビュー",
+    "viewers.csv.errors.sourceUnavailable": "CSV の元ファイルパスを取得できません。",
+    "viewers.csv.tooLarge.title": "CSV が大きすぎるためアプリ内でプレビューできません。",
+    "viewers.csv.tooLarge.description": "このファイルは {size} です。アプリ内テキストプレビューの上限は {limit} です。",
+    "viewers.csv.openExternally": "外部アプリで開く",
+    "viewers.csv.emptyFile": "空の CSV ファイルです。",
+    "viewers.csv.stats": "{rows} 行 / {columns} 列{truncated}",
+    "viewers.csv.emptyRows": "行がありません",
+    "viewers.csv.unknownSize": "サイズ不明",
+    "pages.main.title": "CSV ビューア",
+    "pages.main.description": "プラグイン側で CSV を解析してプレビューします。ファイルサイズを確認し、32 MiB を超えるファイルはアプリ内では読み込まず、OS の既定アプリで開けるようにします。",
+    "pages.main.overview": "概要",
+    "pages.main.overviewContent": "- `.csv` ファイルのプレビューに対応します。\n- CSV の解析は Core ではなくプラグイン側で行います。\n- 共有の Core `Table` コンポーネントで表形式に表示します。\n- 32 MiB を超える CSV はアプリ内で読み込みません。",
+    "pages.main.details": "プラグイン詳細",
+    "pages.main.detailLabels.pluginId": "プラグイン ID",
+    "pages.main.detailLabels.version": "バージョン",
+    "pages.main.detailLabels.page": "ページ",
+    "pages.main.detailLabels.viewer": "ビューア",
+    "pages.main.detailLabels.extensions": "拡張子",
+    "pages.main.help.description": ".csv ファイルをテーブルとしてプレビューするビューアプラグインです。",
+    "pages.main.help.examples": [
+      ": csv viewer plugin",
+      ": csv plugin"
+    ],
+    "pages.main.help.commands.Open a .csv file.description": "このプラグインが有効かつ信頼済みの場合、.csv ファイルはプラグインビューアでプレビューされます。",
+    "pages.main.staticPage.subtitle": "プラグイン側の CSV 解析と Core のテーブル描画で .csv ファイルをプレビューします。",
+    "pages.main.staticPage.sections.0.title": "プラグイン",
+    "pages.main.staticPage.sections.0.rows.0.label": "プラグイン ID",
+    "pages.main.staticPage.sections.0.rows.1.label": "バージョン",
+    "pages.main.staticPage.sections.0.rows.2.label": "ビューア",
+    "pages.main.staticPage.sections.0.rows.3.label": "拡張子",
+    "plugin.name": "CSV ビューア",
+    "plugin.description": "プラグイン側の CSV パーサーと Core のテーブルコンポーネントで .csv ファイルをプレビューします。"
+  }
+}

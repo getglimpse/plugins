@@ -1,105 +1,48 @@
 {
   "id": "first-glimpse-plugin",
   "name": "First Glimpse",
-  "version": "0.1.0",
-  "apiVersion": "0.1.0",
-  "description": "A sample plugin that registers action logic from main.js and page layout from page.js.",
-  "i18n": {
-    "ja": {
-      "name": "First Glimpse プラグイン",
-      "description": "main.js のアクションと page.js のページレイアウトを登録するサンプルプラグインです。",
-      "pages.hello.title": "First Glimpse",
-      "pages.hello.description": "このページで hello アクションを試すか、`: first glimpse > Ada` のように検索から実行できます。",
-      "pages.hello.tabs.playground": "プレイグラウンド",
-      "pages.hello.tabs.info": "情報",
-      "pages.hello.overview": "概要",
-      "pages.hello.settings": "設定",
-      "pages.hello.settings.copySuccessfulSearchResult": "検索から実行した成功結果をコピー",
-      "pages.hello.inputPlaceholder": "挨拶する名前",
-      "pages.hello.submitLabel": "挨拶",
-      "pages.hello.details": "プラグイン詳細",
-      "pages.hello.detailLabels.pluginId": "プラグイン ID",
-      "pages.hello.detailLabels.version": "バージョン",
-      "pages.hello.detailLabels.page": "ページ",
-      "pages.hello.help.description": "ページアクション型プラグインのサンプルです。`>` より前のテキストは検索に使われ、`>` より後のテキストがページアクションに渡されます。",
-      "pages.hello.help.examples": [
-        ": first glimpse > Ada",
-        ": sample plugin > Glimpse"
-      ],
-      "pages.hello.help.commands.> name.description": "名前を hello ページアクションへ渡します。",
-      "pages.hello.staticPage.subtitle": "first-glimpse-plugin のフォールバックコンテンツです。",
-      "pages.hello.staticPage.sections.0.title": "プラグイン",
-      "pages.hello.staticPage.sections.0.rows.0.label": "プラグイン ID",
-      "pages.hello.staticPage.sections.0.rows.1.label": "貢献",
-      "pages.hello.staticPage.sections.0.rows.1.value": "内部ページ",
-      "pages.hello.staticPage.sections.0.rows.2.label": "ページ ID",
-      "pages.hello.staticPage.sections.0.rows.3.label": "ランタイム",
-      "pages.hello.staticPage.sections.1.title": "フォールバック",
-      "pages.hello.staticPage.sections.1.paragraphs.0": "プラグイン runtime ページが利用できない場合だけ、この内容が表示されます。",
-      "actions.hello.result": "こんにちは、{name}！"
-    }
-  },
+  "version": "0.2.0",
+  "apiVersion": "0.2.0",
+  "releaseDate": "2026-09-03",
+  "description": "A sample plugin that registers action logic from main.js and page layout from page.json.",
   "enabledByDefault": true,
+  "page": "./page.json",
   "entrypoints": {
-    "main": "./main.js",
-    "page": "./page.js"
+    "main": "./main.js"
   },
   "contributes": {
-    "internalPages": [
+    "internalPage": {
+      "id": "plugin:first-glimpse-plugin",
+      "titleKey": "plugin.name",
+      "titleFallback": "First Glimpse",
+      "tags": [
+        "internal",
+        "plugin",
+        "sample",
+        "glimpse"
+      ],
+      "aliases": [
+        "first",
+        "first glimpse",
+        "sample plugin"
+      ],
+      "boost": 1
+    },
+    "actions": [
       {
-        "id": "plugin:first-glimpse-plugin",
-        "title": "First Glimpse",
-        "tags": ["internal", "plugin", "sample", "glimpse"],
-        "aliases": ["first", "first glimpse", "sample plugin"],
-        "boost": 1,
-        "pageAction": {
-          "actionId": "hello",
-          "inputPlaceholder": "Name to greet",
-          "examples": ["Glimpse", "Ada", "Plugin author"]
-        },
-        "help": {
-          "description": "A sample page action plugin. The text before > is used for search, and the text after > is passed to the page action.",
-          "examples": [": first glimpse > Ada", ": sample plugin > Glimpse"],
-          "commands": [
-            {
-              "command": "> name",
-              "description": "Pass a name to the hello page action."
-            }
-          ]
-        },
-        "staticPage": {
-          "subtitle": "Fallback content for first-glimpse-plugin.",
-          "sections": [
-            {
-              "title": "Plugin",
-              "rows": [
-                {
-                  "label": "Plugin ID",
-                  "value": "first-glimpse-plugin"
-                },
-                {
-                  "label": "Contribution",
-                  "value": "Internal Page"
-                },
-                {
-                  "label": "Page ID",
-                  "value": "plugin:first-glimpse-plugin"
-                },
-                {
-                  "label": "Runtime",
-                  "value": "frontend"
-                }
-              ]
-            },
-            {
-              "title": "Fallback",
-              "paragraphs": [
-                "This content appears only when the plugin runtime page is not available."
-              ]
-            }
-          ]
-        }
+        "id": "hello",
+        "titleKey": "actions.hello.title",
+        "titleFallback": "Say hello",
+        "descriptionKey": "actions.hello.description",
+        "descriptionFallback": "Return a greeting from the fixture plugin."
       }
-    ]
+    ],
+    "viewers": []
+  },
+  "i18n": "./i18n.json",
+  "capabilities": {
+    "files": {
+      "read": "none"
+    }
   }
 }

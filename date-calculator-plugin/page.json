@@ -1,0 +1,24 @@
+{
+  "id": "plugin:date-calculator-plugin",
+  "tabs": [
+    {
+      "id": "playground",
+      "type": "playground",
+      "titleKey": "tabs.playground.title",
+      "titleFallback": "Playground",
+      "action": "calculate",
+      "inputPlaceholderKey": "tabs.playground.placeholder",
+      "inputPlaceholderFallback": "Date expression",
+      "examples": [
+        "today",
+        "today + 7d",
+        "today + 10bd",
+        "next monday",
+        "weekday(today)",
+        "eom(today)",
+        "2026-01-31 + 1m",
+        "2026-08-10 - 2026-07-30"
+      ]
+    }
+  ]
+}

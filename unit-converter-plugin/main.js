@@ -219,7 +219,7 @@ const formatResult = (value, unit, ctx) => {
   if (result.length > MAX_RESULT_LENGTH) {
     throw new Error(
       ctx.i18n.t(
-        "pages.convert.errors.resultTooLong",
+        "actions.convert.errors.resultTooLong",
         `Result is too large to display; limit is ${MAX_RESULT_LENGTH} characters`,
       ),
     );
@@ -265,7 +265,7 @@ const convertTemperature = (value, fromUnit, toUnit, ctx) => {
   if (toUnit === "k" && converted < 0) {
     throw new Error(
       ctx.i18n.t(
-        "pages.convert.errors.invalidTemperature",
+        "actions.convert.errors.invalidTemperature",
         "Temperature is below absolute zero",
       ),
     );
@@ -297,7 +297,7 @@ export default function activate(ctx) {
     if (!source) {
       throw new Error(
         ctx.i18n.t(
-          "pages.convert.errors.required",
+          "actions.convert.errors.required",
           "Conversion expression is required",
         ),
       );
@@ -306,7 +306,7 @@ export default function activate(ctx) {
     if (source.length > MAX_EXPRESSION_LENGTH) {
       throw new Error(
         ctx.i18n.t(
-          "pages.convert.errors.expressionTooLong",
+          "actions.convert.errors.expressionTooLong",
           `Conversion expression must be ${MAX_EXPRESSION_LENGTH} characters or less`,
         ),
       );
@@ -317,7 +317,7 @@ export default function activate(ctx) {
     if (!parsed) {
       throw new Error(
         ctx.i18n.t(
-          "pages.convert.errors.unsupportedConversion",
+          "actions.convert.errors.unsupportedConversion",
           "Unsupported conversion",
         ),
       );
@@ -328,7 +328,7 @@ export default function activate(ctx) {
     if (!Number.isFinite(value) || Math.abs(value) > MAX_ABSOLUTE_VALUE) {
       throw new Error(
         ctx.i18n.t(
-          "pages.convert.errors.valueOutOfRange",
+          "actions.convert.errors.valueOutOfRange",
           `Value is out of range; maximum absolute value is ${MAX_ABSOLUTE_VALUE}`,
         ),
       );
@@ -345,7 +345,7 @@ export default function activate(ctx) {
 
     if (!fromDefinition || !toDefinition) {
       throw new Error(
-        ctx.i18n.t("pages.convert.errors.unsupportedUnit", "Unsupported unit"),
+        ctx.i18n.t("actions.convert.errors.unsupportedUnit", "Unsupported unit"),
       );
     }
 
@@ -355,7 +355,7 @@ export default function activate(ctx) {
     if (fromGroup !== toGroup) {
       throw new Error(
         ctx.i18n.t(
-          "pages.convert.errors.incompatibleUnits",
+          "actions.convert.errors.incompatibleUnits",
           "Incompatible units",
         ),
       );

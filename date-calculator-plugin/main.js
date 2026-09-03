@@ -131,7 +131,7 @@ const assertSupportedAmount = (amount, unit, ctx) => {
   if (!Number.isInteger(amount) || amount < 0 || amount > maxAmount) {
     throw new Error(
       ctx.i18n.t(
-        "pages.calculate.errors.amountOutOfRange",
+        "actions.calculate.errors.amountOutOfRange",
         `Amount is out of range for ${unit}; maximum is ${maxAmount}`,
       ),
     );
@@ -220,7 +220,7 @@ export default function activate(ctx) {
     if (!source) {
       throw new Error(
         ctx.i18n.t(
-          "pages.calculate.errors.required",
+          "actions.calculate.errors.required",
           "Date expression is required",
         ),
       );
@@ -229,7 +229,7 @@ export default function activate(ctx) {
     if (source.length > MAX_EXPRESSION_LENGTH) {
       throw new Error(
         ctx.i18n.t(
-          "pages.calculate.errors.expressionTooLong",
+          "actions.calculate.errors.expressionTooLong",
           `Date expression must be ${MAX_EXPRESSION_LENGTH} characters or less`,
         ),
       );
@@ -313,7 +313,7 @@ export function deactivate(ctx) {
 function throwUnsupportedExpression(ctx) {
   throw new Error(
     ctx.i18n.t(
-      "pages.calculate.errors.unsupportedExpression",
+      "actions.calculate.errors.unsupportedExpression",
       "Unsupported date expression",
     ),
   );

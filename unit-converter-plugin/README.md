@@ -4,10 +4,10 @@ Sample plugin version of Glimpse's unit converter.
 
 It demonstrates:
 
-- page action execution through `contributes.internalPages[].pageAction`
+- page action execution through `contributes.internalPage` and `page.json`
 - unit conversion logic in `main.js`
-- an Internal Page layout in `page.js`
-- `Tabs`, `ActionPlayground`, `ActionSettings`, `Section`, and `KeyValueList`
+- a standard tab layout in `page.json`
+- generated Playground, Settings, and Info tabs
 - manifest `i18n` for Japanese labels and help text
 - scoped plugin styling through `styles.css`
 

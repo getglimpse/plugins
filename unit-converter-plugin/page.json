@@ -1,0 +1,22 @@
+{
+  "id": "plugin:unit-converter-plugin",
+  "tabs": [
+    {
+      "id": "playground",
+      "type": "playground",
+      "titleKey": "tabs.playground.title",
+      "titleFallback": "Playground",
+      "action": "convert",
+      "inputPlaceholderKey": "tabs.playground.placeholder",
+      "inputPlaceholderFallback": "Conversion expression",
+      "examples": [
+        "10cm to inches",
+        "5mi to km",
+        "2l to ml",
+        "100km/h to mph",
+        "1gb to mib",
+        "300k to c"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[data-glimpse-plugin-page="file-converter-plugin"] {
+  --file-converter-plugin-accent: color-mix(in srgb, var(--accent) 72%, white);
+}
+
+[data-glimpse-plugin-page="file-converter-plugin"] button:focus-visible,
+[data-glimpse-plugin-page="file-converter-plugin"] input:focus {
+  outline: 1px solid var(--file-converter-plugin-accent);
+  outline-offset: 2px;
+}

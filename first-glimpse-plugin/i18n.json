@@ -1,0 +1,39 @@
+{
+  "ja": {
+    "name": "First Glimpse",
+    "description": "main.js のアクションと page.json のページレイアウトを登録するサンプルプラグインです。",
+    "pages.hello.title": "First Glimpse",
+    "pages.hello.description": "このページで hello アクションを試すか、`: first glimpse > Ada` のように検索から実行できます。",
+    "pages.hello.tabs.playground": "プレイグラウンド",
+    "pages.hello.tabs.info": "情報",
+    "pages.hello.overview": "概要",
+    "pages.hello.settings": "設定",
+    "pages.hello.settings.copySuccessfulSearchResult": "検索から実行した成功結果をコピー",
+    "pages.hello.inputPlaceholder": "挨拶する名前",
+    "pages.hello.submitLabel": "挨拶",
+    "pages.hello.details": "プラグイン詳細",
+    "pages.hello.detailLabels.pluginId": "プラグイン ID",
+    "pages.hello.detailLabels.version": "バージョン",
+    "pages.hello.detailLabels.page": "ページ",
+    "pages.hello.help.description": "ページアクション型プラグインのサンプルです。`>` より前のテキストは検索に使われ、`>` より後のテキストがページアクションに渡されます。",
+    "pages.hello.help.examples": [
+      ": first glimpse > Ada",
+      ": sample plugin > Glimpse"
+    ],
+    "pages.hello.help.commands.> name.description": "名前を hello ページアクションへ渡します。",
+    "pages.hello.staticPage.subtitle": "first-glimpse-plugin のフォールバックコンテンツです。",
+    "pages.hello.staticPage.sections.0.title": "プラグイン",
+    "pages.hello.staticPage.sections.0.rows.0.label": "プラグイン ID",
+    "pages.hello.staticPage.sections.0.rows.1.label": "貢献",
+    "pages.hello.staticPage.sections.0.rows.1.value": "内部ページ",
+    "pages.hello.staticPage.sections.0.rows.2.label": "ページ ID",
+    "pages.hello.staticPage.sections.0.rows.3.label": "ランタイム",
+    "pages.hello.staticPage.sections.1.title": "フォールバック",
+    "pages.hello.staticPage.sections.1.paragraphs.0": "プラグイン runtime ページが利用できない場合だけ、この内容が表示されます。",
+    "actions.hello.result": "こんにちは、{name}！",
+    "plugin.name": "First Glimpse",
+    "plugin.description": "main.js のアクションと page.json のページレイアウトを登録するサンプルプラグインです。",
+    "tabs.playground.title": "プレイグラウンド",
+    "tabs.playground.placeholder": "挨拶する名前"
+  }
+}

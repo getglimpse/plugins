@@ -6,7 +6,7 @@ export default function activate(ctx) {
       import: () => {
         throw new Error(
           ctx.i18n.t(
-            "pages.calculate.errors.importDisabled",
+            "actions.calculate.errors.importDisabled",
             "import is disabled",
           ),
         );
@@ -14,7 +14,7 @@ export default function activate(ctx) {
       createUnit: () => {
         throw new Error(
           ctx.i18n.t(
-            "pages.calculate.errors.createUnitDisabled",
+            "actions.calculate.errors.createUnitDisabled",
             "createUnit is disabled",
           ),
         );
@@ -29,7 +29,7 @@ export default function activate(ctx) {
     if (!source) {
       throw new Error(
         ctx.i18n.t(
-          "pages.calculate.errors.required",
+          "actions.calculate.errors.required",
           "Expression is required",
         ),
       );
@@ -38,7 +38,7 @@ export default function activate(ctx) {
     if (source.length > MAX_EXPRESSION_LENGTH) {
       throw new Error(
         ctx.i18n.t(
-          "pages.calculate.errors.expressionTooLong",
+          "actions.calculate.errors.expressionTooLong",
           `Expression must be ${MAX_EXPRESSION_LENGTH} characters or less`,
         ),
       );
@@ -50,7 +50,7 @@ export default function activate(ctx) {
 
     if (typeof result === "number" && !Number.isFinite(result)) {
       throw new Error(
-        ctx.i18n.t("pages.calculate.errors.invalidResult", "Invalid result"),
+        ctx.i18n.t("actions.calculate.errors.invalidResult", "Invalid result"),
       );
     }
 
@@ -59,7 +59,7 @@ export default function activate(ctx) {
     if (resultText.length > MAX_RESULT_LENGTH) {
       throw new Error(
         ctx.i18n.t(
-          "pages.calculate.errors.resultTooLong",
+          "actions.calculate.errors.resultTooLong",
           `Result is too large to display; limit is ${MAX_RESULT_LENGTH} characters`,
         ),
       );
@@ -96,7 +96,7 @@ function assertSafeExpression(node, ctx) {
     if (BLOCKED_NODE_TYPES.has(child.type)) {
       throw new Error(
         ctx.i18n.t(
-          "pages.calculate.errors.statefulExpressionDisabled",
+          "actions.calculate.errors.statefulExpressionDisabled",
           "Assignments and function definitions are disabled",
         ),
       );
@@ -111,7 +111,7 @@ function assertSafeExpression(node, ctx) {
     if (typeof functionName === "string" && BLOCKED_FUNCTIONS.has(functionName)) {
       throw new Error(
         ctx.i18n.t(
-          "pages.calculate.errors.environmentFunctionDisabled",
+          "actions.calculate.errors.environmentFunctionDisabled",
           `${functionName} is disabled`,
         ),
       );

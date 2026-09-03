@@ -1,0 +1,19 @@
+{
+  "id": "plugin:first-glimpse-plugin",
+  "tabs": [
+    {
+      "id": "playground",
+      "type": "playground",
+      "titleKey": "tabs.playground.title",
+      "titleFallback": "Playground",
+      "action": "hello",
+      "inputPlaceholderKey": "tabs.playground.placeholder",
+      "inputPlaceholderFallback": "Name to greet",
+      "examples": [
+        "Glimpse",
+        "Ada",
+        "Plugin author"
+      ]
+    }
+  ]
+}

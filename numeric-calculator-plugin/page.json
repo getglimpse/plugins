@@ -1,0 +1,20 @@
+{
+  "id": "plugin:numeric-calculator-plugin",
+  "tabs": [
+    {
+      "id": "playground",
+      "type": "playground",
+      "titleKey": "tabs.playground.title",
+      "titleFallback": "Playground",
+      "action": "calculate",
+      "inputPlaceholderKey": "tabs.playground.placeholder",
+      "inputPlaceholderFallback": "Expression",
+      "examples": [
+        "1 + 1",
+        "sqrt(144)",
+        "pow(2, 8)",
+        "round(pi, 4)"
+      ]
+    }
+  ]
+}

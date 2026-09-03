@@ -1,72 +1,52 @@
 {
   "id": "html-viewer-plugin",
   "name": "HTML Viewer",
-  "version": "0.1.0",
-  "apiVersion": "0.1.0",
+  "version": "0.2.0",
+  "apiVersion": "0.2.0",
+  "releaseDate": "2026-09-03",
   "description": "Preview .html and .htm files by delegating rendering to the app WebView.",
   "enabledByDefault": true,
+  "page": "./page.json",
   "entrypoints": {
-    "main": "./main.js",
-    "page": "./page.js"
-  },
-  "capabilities": {
-    "files": {
-      "read": "active-tab"
-    }
+    "main": "./main.js"
   },
   "contributes": {
-    "internalPages": [
-      {
-        "id": "plugin:html-viewer-plugin",
-        "title": "HTML Viewer",
-        "tags": ["internal", "plugin", "viewer", "html"],
-        "aliases": ["html viewer", "html plugin", "web page viewer plugin"],
-        "boost": 1,
-        "help": {
-          "description": "A viewer plugin that previews .html and .htm files through the app WebView.",
-          "examples": [": html viewer plugin", ": html plugin"],
-          "commands": [
-            {
-              "command": "Open an .html or .htm file",
-              "description": "When this plugin is enabled and trusted, HTML files are previewed by the plugin viewer after a manual load click."
-            }
-          ]
-        },
-        "staticPage": {
-          "subtitle": "Preview local HTML files through a manually loaded WebView frame.",
-          "sections": [
-            {
-              "title": "Plugin",
-              "rows": [
-                {
-                  "label": "Plugin ID",
-                  "value": "html-viewer-plugin"
-                },
-                {
-                  "label": "Version",
-                  "value": "0.1.0"
-                },
-                {
-                  "label": "Viewer",
-                  "value": "html"
-                },
-                {
-                  "label": "Extensions",
-                  "value": ".html, .htm"
-                }
-              ]
-            }
-          ]
-        }
-      }
-    ],
+    "internalPage": {
+      "id": "plugin:html-viewer-plugin",
+      "titleKey": "plugin.name",
+      "titleFallback": "HTML Viewer",
+      "tags": [
+        "internal",
+        "plugin",
+        "viewer",
+        "html"
+      ],
+      "aliases": [
+        "html viewer",
+        "html plugin",
+        "web page viewer plugin"
+      ],
+      "boost": 1
+    },
+    "actions": [],
     "viewers": [
       {
         "id": "html",
-        "title": "HTML Viewer",
-        "description": "Preview HTML files through the app WebView.",
-        "extensions": ["html", "htm"]
+        "titleKey": "viewers.html.title",
+        "titleFallback": "HTML Viewer",
+        "descriptionKey": "viewers.html.description",
+        "descriptionFallback": "Preview HTML files through the app WebView.",
+        "extensions": [
+          "html",
+          "htm"
+        ]
       }
     ]
+  },
+  "capabilities": {
+    "files": {
+      "read": "active-tab",
+      "write": "none"
+    }
   }
 }

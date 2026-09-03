@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.0 - 2026-09-03
+
+- Updated the sample plugin to the v0.2.0 manifest shape.
+- Replaced the `page.js` Internal Page entrypoint with `page.json` standard tab declarations.
+- Kept runtime logic in `main.js` for actions and viewers.
+- Converted the viewer sample to an Info-only plugin page with viewer metadata declared in the manifest.
+
+## 0.1.1 - 2026-09-03
+
+- Bumped the sample plugin version to `0.1.1` for the current plugin sample set.
+
 ## 0.1.0 - 2026-07-31
 
 - Added the HTML viewer plugin.
