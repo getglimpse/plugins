@@ -1,0 +1,41 @@
+{
+  "id": "file-viewer-template-plugin",
+  "name": "File Viewer Template",
+  "version": "0.2.0",
+  "apiVersion": "0.2.0",
+  "releaseDate": "2026-09-04",
+  "description": "A file viewer template that reads the active preview file.",
+  "enabledByDefault": true,
+  "page": "./page.json",
+  "entrypoints": {
+    "main": "./main.js"
+  },
+  "contributes": {
+    "internalPage": {
+      "id": "plugin:file-viewer-template-plugin",
+      "titleKey": "plugin.name",
+      "titleFallback": "File Viewer Template",
+      "tags": ["internal", "plugin", "template", "viewer", "file"],
+      "aliases": ["file viewer template", "viewer template"],
+      "boost": 1
+    },
+    "actions": [],
+    "viewers": [
+      {
+        "id": "text",
+        "titleKey": "viewers.text.title",
+        "titleFallback": "Text Viewer",
+        "descriptionKey": "viewers.text.description",
+        "descriptionFallback": "Preview .txt files from a plugin viewer.",
+        "extensions": ["txt"]
+      }
+    ]
+  },
+  "i18n": "./i18n.json",
+  "capabilities": {
+    "files": {
+      "read": "active-tab",
+      "write": "none"
+    }
+  }
+}

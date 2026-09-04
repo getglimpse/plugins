@@ -1,0 +1,16 @@
+{
+  "id": "plugin:basic-action-template-plugin",
+  "tabs": [
+    {
+      "id": "playground",
+      "type": "playground",
+      "titleKey": "tabs.playground.title",
+      "titleFallback": "Playground",
+      "action": "hello",
+      "inputPlaceholderKey": "tabs.playground.placeholder",
+      "inputPlaceholderFallback": "Name",
+      "examples": ["Glimpse", "Plugin author"],
+      "submitLabel": "Run"
+    }
+  ]
+}

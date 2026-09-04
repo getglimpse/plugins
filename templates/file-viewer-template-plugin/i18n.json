@@ -1,0 +1,26 @@
+{
+  "en": {
+    "name": "File Viewer Template",
+    "description": "A file viewer template that reads the active preview file.",
+    "plugin.name": "File Viewer Template",
+    "plugin.description": "A file viewer template that reads the active preview file.",
+    "viewers.text.title": "Text Viewer",
+    "viewers.text.description": "Preview .txt files from a plugin viewer.",
+    "viewers.text.errors.sourceUnavailable": "Source path is not available.",
+    "viewers.text.loaded": "Preview loaded.",
+    "viewers.text.truncated": "Preview was truncated.",
+    "viewers.text.preview": "Preview"
+  },
+  "ja": {
+    "name": "ファイルビューアテンプレート",
+    "description": "アクティブなプレビューファイルを読み込むビューアテンプレートです。",
+    "plugin.name": "ファイルビューアテンプレート",
+    "plugin.description": "アクティブなプレビューファイルを読み込むビューアテンプレートです。",
+    "viewers.text.title": "テキストビューア",
+    "viewers.text.description": ".txt ファイルをプラグインビューアでプレビューします。",
+    "viewers.text.errors.sourceUnavailable": "ソースパスを取得できません。",
+    "viewers.text.loaded": "プレビューを読み込みました。",
+    "viewers.text.truncated": "プレビューを途中まで表示しています。",
+    "viewers.text.preview": "プレビュー"
+  }
+}

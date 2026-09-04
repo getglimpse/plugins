@@ -1,0 +1,45 @@
+{
+  "id": "basic-action-template-plugin",
+  "name": "Basic Action Template",
+  "version": "0.2.0",
+  "apiVersion": "0.2.0",
+  "releaseDate": "2026-09-04",
+  "description": "A minimal action plugin with a standard Playground tab.",
+  "enabledByDefault": true,
+  "page": "./page.json",
+  "entrypoints": {
+    "main": "./main.js"
+  },
+  "contributes": {
+    "internalPage": {
+      "id": "plugin:basic-action-template-plugin",
+      "titleKey": "plugin.name",
+      "titleFallback": "Basic Action Template",
+      "tags": ["internal", "plugin", "template", "action"],
+      "aliases": ["basic action template", "hello template"],
+      "boost": 1,
+      "pageAction": {
+        "actionId": "hello",
+        "inputPlaceholder": "Name",
+        "examples": ["Glimpse", "Plugin author"]
+      }
+    },
+    "actions": [
+      {
+        "id": "hello",
+        "titleKey": "actions.hello.title",
+        "titleFallback": "Say hello",
+        "descriptionKey": "actions.hello.description",
+        "descriptionFallback": "Return a greeting from main.js."
+      }
+    ],
+    "viewers": []
+  },
+  "i18n": "./i18n.json",
+  "capabilities": {
+    "files": {
+      "read": "none",
+      "write": "none"
+    }
+  }
+}
