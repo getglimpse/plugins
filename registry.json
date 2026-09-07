@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "plugins": [
+    {
+      "id": "numeric-calculator-plugin",
+      "name": "Numeric Calculator",
+      "version": "0.2.0",
+      "apiVersion": "0.2.0",
+      "description": "A plugin version of the built-in numeric calculation page.",
+      "releaseDate": "2026-09-03",
+      "fileName": "numeric-calculator-plugin-0.2.0.glimpse-plugin.zip",
+      "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/numeric-calculator-plugin-v0.2.0/numeric-calculator-plugin-0.2.0.glimpse-plugin.zip",
+      "sha256": "f8e403e2374041ab56e8c44469fb639c45643237c7c543fd9efedab9b69c41b7",
+      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/numeric-calculator-plugin",
+      "repositoryUrl": "https://github.com/getglimpse/plugins",
+      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/numeric-calculator-plugin",
+      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+    }
+  ]
+}

@@ -94,3 +94,35 @@ for the full archive and registry contract.
 Remote install does not imply trust. Installing or updating from a Release asset
 clears the plugin trust record, and Glimpse does not load `main.js` until the
 user reviews and trusts the installed files.
+
+## Registry Validation
+
+The official registry lives at repository root:
+
+```text
+registry.json
+```
+
+Validate it before publishing:
+
+```bash
+node scripts/validate-registry.mjs
+```
+
+The validator reads [`docs/plugin-registry.schema.json`](./docs/plugin-registry.schema.json)
+and checks the fields Glimpse consumes during remote install. Registry entries
+must use HTTPS download URLs, include a 64-character SHA-256 digest, and target
+the plugin API version supported by the release.
+
+## Initial Registry Policy
+
+Registry updates are manual for the initial release:
+
+1. Package the plugin with `pnpm plugins:package .plugins/<plugin-id>`.
+2. Attach the generated `.glimpse-plugin.zip` to a GitHub Release.
+3. Copy the generated `.release.json` fields into `registry.json`.
+4. Keep plugins without a published Release asset out of `registry.json`.
+5. Run `node scripts/validate-registry.mjs`.
+
+GitHub Actions generation can be added after the initial remote install flow is
+verified end to end.
