@@ -41,11 +41,14 @@ Official plugin release assets are published from the `getglimpse/plugins`
 repository. The repository name is intentionally just `plugins` because the
 organization already provides the Glimpse namespace.
 
-Package one plugin directory from the Glimpse repository root:
+Package plugin directories from the Glimpse repository root:
 
 ```bash
 pnpm plugins:package .plugins/numeric-calculator-plugin
 ```
+
+For the initial catalog release, package every plugin directory that should be
+listed in `registry.json`.
 
 The package script writes release files to `dist/plugins/`:
 
@@ -53,7 +56,10 @@ The package script writes release files to `dist/plugins/`:
 dist/plugins/
 |-- numeric-calculator-plugin-0.2.0.glimpse-plugin.zip
 |-- numeric-calculator-plugin-0.2.0.glimpse-plugin.zip.sha256
-`-- numeric-calculator-plugin-0.2.0.release.json
+|-- numeric-calculator-plugin-0.2.0.release.json
+|-- unit-converter-plugin-0.2.0.glimpse-plugin.zip
+|-- unit-converter-plugin-0.2.0.glimpse-plugin.zip.sha256
+`-- unit-converter-plugin-0.2.0.release.json
 ```
 
 Attach the `.glimpse-plugin.zip` file to a GitHub Release in
@@ -64,7 +70,7 @@ The release tag should identify the plugin and version, for example
 `numeric-calculator-plugin-v0.2.0`. The release asset name should be the
 generated `<plugin-id>-<version>.glimpse-plugin.zip` file.
 
-After uploading the release asset, add or update the plugin entry in
+After uploading the release asset, add or update each plugin entry in
 `registry.json`:
 
 ```json
@@ -73,10 +79,12 @@ After uploading the release asset, add or update the plugin entry in
   "name": "Numeric Calculator",
   "version": "0.2.0",
   "apiVersion": "0.2.0",
-  "description": "Run numeric calculations from Glimpse.",
-  "releaseDate": "2026-09-06",
+  "description": "A plugin version of the built-in numeric calculation page.",
+  "releaseDate": "2026-09-03",
+  "fileName": "numeric-calculator-plugin-0.2.0.glimpse-plugin.zip",
   "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/numeric-calculator-plugin-v0.2.0/numeric-calculator-plugin-0.2.0.glimpse-plugin.zip",
   "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/numeric-calculator-plugin",
   "repositoryUrl": "https://github.com/getglimpse/plugins"
 }
 ```
@@ -118,11 +126,12 @@ the plugin API version supported by the release.
 
 Registry updates are manual for the initial release:
 
-1. Package the plugin with `pnpm plugins:package .plugins/<plugin-id>`.
-2. Attach the generated `.glimpse-plugin.zip` to a GitHub Release.
+1. Package each plugin with `pnpm plugins:package .plugins/<plugin-id>`.
+2. Attach each generated `.glimpse-plugin.zip` to its matching GitHub Release.
 3. Copy the generated `.release.json` fields into `registry.json`.
-4. Keep plugins without a published Release asset out of `registry.json`.
-5. Run `node scripts/validate-registry.mjs`.
+4. Add `downloadUrl`, `sourceUrl`, `repositoryUrl`, `homepageUrl`, and `supportUrl`.
+5. Keep plugins without a published Release asset out of `registry.json`.
+6. Run `node scripts/validate-registry.mjs`.
 
 GitHub Actions generation can be added after the initial remote install flow is
 verified end to end.
