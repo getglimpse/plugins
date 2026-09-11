@@ -82,6 +82,15 @@ for (const [index, plugin] of (registry?.plugins ?? []).entries()) {
       continue;
     }
 
+    if (property.type === "integer" && !Number.isInteger(value)) {
+      errors.push(`${prefix}.${field} must be an integer`);
+      continue;
+    }
+
+    if (typeof property.minimum === "number" && typeof value === "number" && value < property.minimum) {
+      errors.push(`${prefix}.${field} must be >= ${property.minimum}`);
+    }
+
     if (property.minLength && typeof value === "string" && value.length < property.minLength) {
       errors.push(`${prefix}.${field} must not be empty`);
     }

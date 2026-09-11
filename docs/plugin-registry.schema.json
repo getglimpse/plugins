@@ -26,8 +26,14 @@
         "name",
         "version",
         "apiVersion",
+        "category",
+        "description",
+        "releaseDate",
+        "fileName",
         "downloadUrl",
-        "sha256"
+        "sha256",
+        "repositoryUrl",
+        "readmeUrl"
       ],
       "properties": {
         "id": {
@@ -46,9 +52,17 @@
           "type": "string",
           "pattern": "^\\d+\\.\\d+\\.\\d+$"
         },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
         "description": {
           "type": "string",
           "minLength": 1
+        },
+        "downloadCount": {
+          "type": "integer",
+          "minimum": 0
         },
         "downloadUrl": {
           "type": "string",
@@ -67,22 +81,12 @@
           "type": "string",
           "pattern": "\\.glimpse-plugin\\.zip$"
         },
-        "sourceUrl": {
-          "type": "string",
-          "format": "uri",
-          "pattern": "^https://"
-        },
         "repositoryUrl": {
           "type": "string",
           "format": "uri",
           "pattern": "^https://"
         },
-        "homepageUrl": {
-          "type": "string",
-          "format": "uri",
-          "pattern": "^https://"
-        },
-        "supportUrl": {
+        "readmeUrl": {
           "type": "string",
           "format": "uri",
           "pattern": "^https://"

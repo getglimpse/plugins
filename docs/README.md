@@ -8,7 +8,7 @@ Plugin API、package、release archive、author 向け実装ガイドは `getgli
 
 | 文書 | 内容 |
 | --- | --- |
-| [plugin-registry.schema.json](./plugin-registry.schema.json) | Remote install 用 registry JSON schema。 |
+| [plugin-registry.schema.json](./plugin-registry.schema.json) | Remote install と Plugin Store 表示用 registry JSON schema。 |
 
 ## 検証
 
@@ -18,7 +18,7 @@ repository root で次を実行します。
 node scripts/validate-registry.mjs
 ```
 
-この script は root の `registry.json` とこの schema を使い、remote install が読む field を検証します。
+この script は root の `registry.json` とこの schema を使い、remote install と Plugin Store detail が読む field を検証します。
 
 ## 関連ディレクトリ
 

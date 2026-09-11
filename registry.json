@@ -6,135 +6,126 @@
       "name": "CSV Viewer",
       "version": "0.2.0",
       "apiVersion": "0.2.0",
+      "category": "Viewer",
       "description": "Preview .csv files with a plugin-owned CSV parser and Core table components.",
       "releaseDate": "2026-09-03",
       "fileName": "csv-viewer-plugin-0.2.0.glimpse-plugin.zip",
       "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/csv-viewer-plugin-v0.2.0/csv-viewer-plugin-0.2.0.glimpse-plugin.zip",
       "sha256": "b2f489282c3e910ae2cf157da5078c99a3510b948ea019ecd0d1abaf04651c8d",
-      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/csv-viewer-plugin",
       "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/csv-viewer-plugin",
-      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/csv-viewer-plugin/README.md"
     },
     {
       "id": "date-calculator-plugin",
       "name": "Date Calculator",
       "version": "0.2.0",
       "apiVersion": "0.2.0",
+      "category": "Calculator",
       "description": "A plugin version of the built-in date calculation page.",
       "releaseDate": "2026-09-03",
       "fileName": "date-calculator-plugin-0.2.0.glimpse-plugin.zip",
       "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/date-calculator-plugin-v0.2.0/date-calculator-plugin-0.2.0.glimpse-plugin.zip",
       "sha256": "34f00b348366c8c4b0f46bde82e6ba23019e4169407891040b2ae471d0b9225d",
-      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/date-calculator-plugin",
       "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/date-calculator-plugin",
-      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/date-calculator-plugin/README.md"
     },
     {
       "id": "file-converter-plugin",
       "name": "File Converter",
       "version": "0.2.0",
       "apiVersion": "0.2.0",
+      "category": "Converter",
       "description": "Drop a text or Markdown file, add a success marker to the top, and write the converted file to a configurable output directory.",
       "releaseDate": "2026-09-03",
       "fileName": "file-converter-plugin-0.2.0.glimpse-plugin.zip",
       "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/file-converter-plugin-v0.2.0/file-converter-plugin-0.2.0.glimpse-plugin.zip",
       "sha256": "5c5109113604301998bffdc25bc518cb88c48286b8204a9c7e85389602789b2f",
-      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/file-converter-plugin",
       "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/file-converter-plugin",
-      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/file-converter-plugin/README.md"
     },
     {
       "id": "first-glimpse-plugin",
       "name": "First Glimpse",
       "version": "0.2.0",
       "apiVersion": "0.2.0",
+      "category": "Sample",
       "description": "A sample plugin that registers action logic from main.js and page layout from page.json.",
       "releaseDate": "2026-09-03",
       "fileName": "first-glimpse-plugin-0.2.0.glimpse-plugin.zip",
       "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/first-glimpse-plugin-v0.2.0/first-glimpse-plugin-0.2.0.glimpse-plugin.zip",
       "sha256": "d1c3d8760e1a445d517c7c6013d2d5cf68f16763bf0f2eb4b57b31e7363a39d6",
-      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/first-glimpse-plugin",
       "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/first-glimpse-plugin",
-      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/first-glimpse-plugin/README.md"
     },
     {
       "id": "html-viewer-plugin",
       "name": "HTML Viewer",
       "version": "0.2.0",
       "apiVersion": "0.2.0",
+      "category": "Viewer",
       "description": "Preview .html and .htm files by delegating rendering to the app WebView.",
       "releaseDate": "2026-09-03",
       "fileName": "html-viewer-plugin-0.2.0.glimpse-plugin.zip",
       "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/html-viewer-plugin-v0.2.0/html-viewer-plugin-0.2.0.glimpse-plugin.zip",
       "sha256": "1eb5b839be9f63b8f5620a9576530295a6fb1801ed8fba7d260676a25621efce",
-      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/html-viewer-plugin",
       "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/html-viewer-plugin",
-      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/html-viewer-plugin/README.md"
     },
     {
       "id": "numeric-calculator-plugin",
       "name": "Numeric Calculator",
       "version": "0.2.0",
       "apiVersion": "0.2.0",
+      "category": "Calculator",
       "description": "A plugin version of the built-in numeric calculation page.",
       "releaseDate": "2026-09-03",
       "fileName": "numeric-calculator-plugin-0.2.0.glimpse-plugin.zip",
       "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/numeric-calculator-plugin-v0.2.0/numeric-calculator-plugin-0.2.0.glimpse-plugin.zip",
       "sha256": "f8e403e2374041ab56e8c44469fb639c45643237c7c543fd9efedab9b69c41b7",
-      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/numeric-calculator-plugin",
       "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/numeric-calculator-plugin",
-      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/numeric-calculator-plugin/README.md"
     },
     {
       "id": "office-documents-viewer-plugin",
       "name": "Office Documents Viewer",
       "version": "0.2.0",
       "apiVersion": "0.2.0",
+      "category": "Viewer",
       "description": "Preview Office Open XML documents, spreadsheets, and presentations.",
       "releaseDate": "2026-09-03",
       "fileName": "office-documents-viewer-plugin-0.2.0.glimpse-plugin.zip",
       "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/office-documents-viewer-plugin-v0.2.0/office-documents-viewer-plugin-0.2.0.glimpse-plugin.zip",
       "sha256": "9644402df1ccf921a70f066a7088527bdc0bdb74c5fe20b7f5331b4d7a13218f",
-      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/office-documents-viewer-plugin",
       "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/office-documents-viewer-plugin",
-      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/office-documents-viewer-plugin/README.md"
     },
     {
       "id": "pdf-viewer-plugin",
       "name": "PDF Viewer",
       "version": "0.2.0",
       "apiVersion": "0.2.0",
+      "category": "Viewer",
       "description": "Preview .pdf files with lazy loading for large documents.",
       "releaseDate": "2026-09-03",
       "fileName": "pdf-viewer-plugin-0.2.0.glimpse-plugin.zip",
       "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/pdf-viewer-plugin-v0.2.0/pdf-viewer-plugin-0.2.0.glimpse-plugin.zip",
       "sha256": "ae8f6cd44684e0ec126dafa59cbed7cc658c7ea80ac816313dfcd1e6e23b7938",
-      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/pdf-viewer-plugin",
       "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/pdf-viewer-plugin",
-      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/pdf-viewer-plugin/README.md"
     },
     {
       "id": "unit-converter-plugin",
       "name": "Unit Converter",
       "version": "0.2.0",
       "apiVersion": "0.2.0",
+      "category": "Converter",
       "description": "A plugin version of the built-in unit conversion page.",
       "releaseDate": "2026-09-03",
       "fileName": "unit-converter-plugin-0.2.0.glimpse-plugin.zip",
       "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/unit-converter-plugin-v0.2.0/unit-converter-plugin-0.2.0.glimpse-plugin.zip",
       "sha256": "9e5d5324c05e87a4426eb3c64009291ca1352e44f4d14dd4b64969af68c01c90",
-      "sourceUrl": "https://github.com/getglimpse/plugins/tree/main/unit-converter-plugin",
       "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "homepageUrl": "https://github.com/getglimpse/plugins/tree/main/unit-converter-plugin",
-      "supportUrl": "https://github.com/getglimpse/plugins/issues"
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/unit-converter-plugin/README.md"
     }
   ]
 }
