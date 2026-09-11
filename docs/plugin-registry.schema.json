@@ -84,12 +84,12 @@
         "repositoryUrl": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https://"
+          "pattern": "^https://github\\.com/getglimpse/plugins$"
         },
         "readmeUrl": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https://"
+          "pattern": "^https://raw\\.githubusercontent\\.com/getglimpse/plugins/main/[a-z0-9][a-z0-9._-]*/README\\.md$"
         }
       }
     }

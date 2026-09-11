@@ -29,6 +29,10 @@ const allowedPluginFields = new Set(Object.keys(pluginProperties));
 const matches = (value, pattern) =>
   typeof value === "string" && new RegExp(pattern).test(value);
 
+const officialRepositoryUrl = "https://github.com/getglimpse/plugins";
+const officialReadmeUrlPrefix =
+  "https://raw.githubusercontent.com/getglimpse/plugins/main/";
+
 if (!registry || typeof registry !== "object" || Array.isArray(registry)) {
   errors.push("registry must be a JSON object");
 }
@@ -68,6 +72,21 @@ for (const [index, plugin] of (registry?.plugins ?? []).entries()) {
       errors.push(`${prefix}.id duplicates ${plugin.id}`);
     }
     seenIds.add(plugin.id);
+
+    if (
+      typeof plugin.repositoryUrl === "string" &&
+      plugin.repositoryUrl !== officialRepositoryUrl
+    ) {
+      errors.push(`${prefix}.repositoryUrl must be ${officialRepositoryUrl}`);
+    }
+
+    const expectedReadmeUrl = `${officialReadmeUrlPrefix}${plugin.id}/README.md`;
+    if (
+      typeof plugin.readmeUrl === "string" &&
+      plugin.readmeUrl !== expectedReadmeUrl
+    ) {
+      errors.push(`${prefix}.readmeUrl must be ${expectedReadmeUrl}`);
+    }
   }
 
   for (const [field, property] of Object.entries(pluginProperties)) {
