@@ -1,0 +1,56 @@
+{
+  "id": "password-generator-plugin",
+  "name": "Password Generator",
+  "version": "0.2.0",
+  "apiVersion": "0.2.0",
+  "releaseDate": "2026-09-20",
+  "description": "Generate strong passwords from configurable character sets.",
+  "enabledByDefault": true,
+  "defaultLocale": "en",
+  "repositoryUrl": "https://github.com/getglimpse/plugins",
+  "page": "./page.json",
+  "entrypoints": {
+    "main": "./main.js"
+  },
+  "contributes": {
+    "internalPage": {
+      "id": "plugin:password-generator-plugin",
+      "titleKey": "plugin.name",
+      "titleFallback": "Password Generator",
+      "tags": [
+        "internal",
+        "plugin",
+        "password",
+        "security",
+        "generator",
+        "tool"
+      ],
+      "aliases": [
+        "password generator",
+        "random password",
+        "secure password",
+        "password tool",
+        "パスワード生成",
+        "パスワードジェネレーター"
+      ],
+      "boost": 1
+    },
+    "actions": [
+      {
+        "id": "generatePassword",
+        "titleKey": "actions.generatePassword.title",
+        "titleFallback": "Generate password",
+        "descriptionKey": "actions.generatePassword.description",
+        "descriptionFallback": "Generate a password with cryptographically secure random bytes."
+      }
+    ],
+    "viewers": []
+  },
+  "i18n": "./i18n.json",
+  "capabilities": {
+    "files": {
+      "read": "none",
+      "write": "none"
+    }
+  }
+}

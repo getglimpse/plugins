@@ -19,6 +19,7 @@ Samples:
 
 - `first-glimpse-plugin`: minimal `main.js` action and `page.json` Playground tab.
 - `numeric-calculator-plugin`: calculator page built with Core components and mathjs.
+- `password-generator-plugin`: secure password generator built with a standard Form tab.
 - `date-calculator-plugin`: date calculator page built with Core components.
 - `unit-converter-plugin`: unit converter page built with Core components.
 - `pdf-viewer-plugin`: PDF file viewer with lazy loading for large documents.

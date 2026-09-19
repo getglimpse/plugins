@@ -1,0 +1,79 @@
+{
+  "id": "plugin:password-generator-plugin",
+  "tabs": [
+    {
+      "id": "generator",
+      "type": "form",
+      "titleKey": "tabs.generator.title",
+      "titleFallback": "Generator",
+      "action": "generatePassword",
+      "submitLabelKey": "tabs.generator.submit",
+      "submitLabelFallback": "Generate password",
+      "fields": [
+        {
+          "id": "length",
+          "type": "number",
+          "control": "slider",
+          "labelKey": "tabs.generator.fields.length.label",
+          "labelFallback": "Length",
+          "descriptionKey": "tabs.generator.fields.length.description",
+          "descriptionFallback": "Choose a length from 8 to 128 characters.",
+          "default": 20,
+          "min": 8,
+          "max": 128,
+          "step": 1
+        },
+        {
+          "id": "lowercase",
+          "type": "boolean",
+          "control": "checkbox",
+          "labelKey": "tabs.generator.fields.lowercase.label",
+          "labelFallback": "Lowercase letters",
+          "default": true
+        },
+        {
+          "id": "uppercase",
+          "type": "boolean",
+          "control": "checkbox",
+          "labelKey": "tabs.generator.fields.uppercase.label",
+          "labelFallback": "Uppercase letters",
+          "default": true
+        },
+        {
+          "id": "numbers",
+          "type": "boolean",
+          "control": "checkbox",
+          "labelKey": "tabs.generator.fields.numbers.label",
+          "labelFallback": "Numbers",
+          "default": true
+        },
+        {
+          "id": "symbols",
+          "type": "boolean",
+          "control": "checkbox",
+          "labelKey": "tabs.generator.fields.symbols.label",
+          "labelFallback": "Symbols",
+          "default": true
+        },
+        {
+          "id": "excludeAmbiguous",
+          "type": "boolean",
+          "control": "checkbox",
+          "labelKey": "tabs.generator.fields.excludeAmbiguous.label",
+          "labelFallback": "Exclude ambiguous characters",
+          "descriptionKey": "tabs.generator.fields.excludeAmbiguous.description",
+          "descriptionFallback": "Exclude I, l, 1, O, 0, and o.",
+          "default": true
+        }
+      ],
+      "result": {
+        "type": "text",
+        "copy": true,
+        "copyLabelKey": "tabs.generator.result.copy",
+        "copyLabelFallback": "Copy password",
+        "copiedLabelKey": "tabs.generator.result.copied",
+        "copiedLabelFallback": "Copied"
+      }
+    }
+  ]
+}
