@@ -100,6 +100,20 @@
       "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/office-documents-viewer-plugin/README.md"
     },
     {
+      "id": "password-generator-plugin",
+      "name": "Password Generator",
+      "version": "0.2.0",
+      "apiVersion": "0.2.0",
+      "category": "Security",
+      "description": "Generate strong passwords from configurable character sets.",
+      "releaseDate": "2026-09-20",
+      "fileName": "password-generator-plugin-0.2.0.glimpse-plugin.zip",
+      "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/password-generator-plugin-v0.2.0/password-generator-plugin-0.2.0.glimpse-plugin.zip",
+      "sha256": "e0a60d47c12051153575eef5edc0293345b809e7881724716e1e2891cd9e206b",
+      "repositoryUrl": "https://github.com/getglimpse/plugins",
+      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/password-generator-plugin/README.md"
+    },
+    {
       "id": "pdf-viewer-plugin",
       "name": "PDF Viewer",
       "version": "0.2.0",
