@@ -22,7 +22,6 @@ Samples:
 - `password-generator-plugin`: secure password generator built with a standard Form tab.
 - `date-calculator-plugin`: date calculator page built with Core components.
 - `unit-converter-plugin`: unit converter page built with Core components.
-- `pdf-viewer-plugin`: PDF file viewer with lazy loading for large documents.
 - `csv-viewer-plugin`: CSV file viewer with plugin-owned parsing and Core `Table`.
 - `html-viewer-plugin`: HTML file viewer with manual WebView loading.
 - `office-documents-viewer-plugin`: Office Open XML viewer for Word, Excel, and PowerPoint files.
