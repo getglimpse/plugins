@@ -114,20 +114,6 @@
       "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/password-generator-plugin/README.md"
     },
     {
-      "id": "pdf-viewer-plugin",
-      "name": "PDF Viewer",
-      "version": "0.2.0",
-      "apiVersion": "0.2.0",
-      "category": "Viewer",
-      "description": "Preview .pdf files with lazy loading for large documents.",
-      "releaseDate": "2026-09-03",
-      "fileName": "pdf-viewer-plugin-0.2.0.glimpse-plugin.zip",
-      "downloadUrl": "https://github.com/getglimpse/plugins/releases/download/pdf-viewer-plugin-v0.2.0/pdf-viewer-plugin-0.2.0.glimpse-plugin.zip",
-      "sha256": "ae8f6cd44684e0ec126dafa59cbed7cc658c7ea80ac816313dfcd1e6e23b7938",
-      "repositoryUrl": "https://github.com/getglimpse/plugins",
-      "readmeUrl": "https://raw.githubusercontent.com/getglimpse/plugins/main/pdf-viewer-plugin/README.md"
-    },
-    {
       "id": "unit-converter-plugin",
       "name": "Unit Converter",
       "version": "0.2.0",
